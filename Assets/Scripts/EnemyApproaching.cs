@@ -2,19 +2,24 @@
 using UnityEditor.UIElements;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.AI;
 
 
 namespace DefaultNamespace
 {
     public class EnemyApproaching : MonoBehaviour
     {
-        public GameObject Player;
+        private GameObject Player;
         public float speed;
-        private bool needReset = true;
-        public float findDistance = 6;
+        private NavMeshAgent findpathAgent;
         private void Awake()
         {
-            //Player = GameObject.Find("Player");
+            Player=GameObject.FindGameObjectWithTag("Player");
+        }
+
+        private void Start()
+        {
+            findpathAgent = GetComponent<NavMeshAgent>();
         }
 
         public float CalculateDistance()
@@ -34,29 +39,20 @@ namespace DefaultNamespace
             Vector3 horizontalPosition = new Vector3(Player.transform.localPosition.x, this.transform.localPosition.y,
                 Player.transform.localPosition.z);
             Vector3 direction = horizontalPosition - this.transform.localPosition;
-            if (distance<findDistance)
-            {
-                this.GetComponent<Idle>().enabled = false;
-                if (distance < this.GetComponent<EnemyAttack>().radius)
-                    this.GetComponent<EnemyAttack>().enabled = true;
-                else
+            if (distance < this.GetComponent<EnemyAttack>().radius)
                 {
-                                    
+                    findpathAgent.isStopped = true;
+                    this.GetComponent<EnemyAttack>().enabled = true;
                     this.transform.forward = direction;
-                    this.transform.localPosition += direction.normalized * speed * Time.deltaTime;
-                    this.GetComponent<Animator> ().Play ("Walk");
-                    needReset = true;
+                    this.enabled = false;
                 }
-
-            }
             else
             {
-                if (needReset)
-                {
-                    this.GetComponent<Animator>().Play("idle1", -1, 0f);
-                    this.GetComponent<Idle>().enabled = true;
-                    needReset = false;
-                }
+                findpathAgent.isStopped = false;
+                findpathAgent.speed = speed;
+                //this.transform.forward = direction;
+                findpathAgent.SetDestination(Player.transform.position);
+                this.GetComponent<Animator> ().Play ("Walk");
             }
         }
     }

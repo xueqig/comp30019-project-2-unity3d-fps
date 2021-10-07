@@ -39,7 +39,7 @@ public class EnemyAttack : MonoBehaviour
             if (attackTimer <= 0)
             {
                 this.isAttack = false;
-                if (this.GetComponent<EnemyApproaching>().CalculateDistance() < 1)
+                if (this.GetComponent<EnemyApproaching>().CalculateDistance() < radius)
                 {
                     GameObject.Find("Player").GetComponent<PlayerBeAttacked>().beingAttacked(damage);
                     attackTimer = 0.6f;
