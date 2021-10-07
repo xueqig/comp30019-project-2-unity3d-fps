@@ -24,11 +24,7 @@ namespace DefaultNamespace
 
         public float CalculateDistance()
         {
-            Vector3 horizontalPosition = new Vector3(Player.transform.localPosition.x, this.transform.localPosition.y,
-                Player.transform.localPosition.z);
-            
-            
-            float distance = (horizontalPosition - this.transform.localPosition).magnitude;
+            float distance = (Player.transform.position - this.transform.localPosition).magnitude;
             return distance;
         }
 

@@ -19,9 +19,6 @@ public class Idle : MonoBehaviour
     void Update()
     {
         float distance = GetComponent<EnemyApproaching>().CalculateDistance();
-        Vector3 horizontalPosition = new Vector3(Player.transform.localPosition.x, this.transform.localPosition.y,
-            Player.transform.localPosition.z);
-        Vector3 direction = horizontalPosition - this.transform.localPosition;
         if (distance < findDistance)
         {
             GetComponent<EnemyApproaching>().enabled = true;
