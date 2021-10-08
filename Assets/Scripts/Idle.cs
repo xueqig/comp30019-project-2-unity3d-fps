@@ -27,7 +27,6 @@ public class Idle : MonoBehaviour
         {
             if (idles.Length>0)
                 UpdateAnimation();
-            GetComponent<EnemyApproaching>().enabled = false;
         }
 
     }

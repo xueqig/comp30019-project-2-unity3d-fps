@@ -15,12 +15,9 @@ namespace DefaultNamespace
         private void Awake()
         {
             Player=GameObject.FindGameObjectWithTag("Player");
-        }
-
-        private void Start()
-        {
             findpathAgent = GetComponent<NavMeshAgent>();
         }
+        
 
         public float CalculateDistance()
         {
@@ -28,6 +25,10 @@ namespace DefaultNamespace
             return distance;
         }
 
+        public void stop()
+        {
+            findpathAgent.isStopped = true;
+        }
 
         void Update()
         {
@@ -42,6 +43,11 @@ namespace DefaultNamespace
                     this.transform.forward = direction;
                     this.enabled = false;
                 }
+            else if(distance>this.GetComponent<Idle>().findDistance)
+            {
+                findpathAgent.isStopped = true;
+                this.enabled = false;
+            }
             else
             {
                 findpathAgent.isStopped = false;
