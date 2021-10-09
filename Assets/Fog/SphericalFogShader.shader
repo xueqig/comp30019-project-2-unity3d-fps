@@ -71,23 +71,6 @@ Shader "Unlit/SphericalFogShader"
                 return position;
             }
 
-            float CalculateFogIntensity(float3 sphereCenter, 
-                                        float3 sphereRadius, 
-                                        float density,
-                                        float3 cameraPosition,
-                                        float3 viewDirection) {
-                float centerValue = 1; // the value of the most thickness fog
-                float clarity = 1; // how clear the fog is, clarity = 1 => fully clear 
-                float3 position = raySphereIntersect(sphereCenter, sphereRadius, 
-                                                     cameraPosition, viewDirection);
-                // centerValue * 1 - how far we are inside the fog / radius
-                // saturate make the value between 0-1
-                float val = saturate(centerValue * (1 - length(position)/sphereRadius));
-                float fog_amount = saturate(val * density);
-                clarity *= (1 - fog_amount);
-                return 1 - clarity;
-            }
-
             vertexOutput vert (vertexInput v)
             {
                 vertexOutput o;
