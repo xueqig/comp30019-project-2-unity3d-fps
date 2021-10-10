@@ -11,7 +11,7 @@ public class BulletController : MonoBehaviour
     private float speed = 0.1f;
 
     private float bullet_AliveTime = 3f;
-    
+
     private Vector3 currentPosition;
 
     private Vector3 nextPosition;
@@ -54,10 +54,6 @@ public class BulletController : MonoBehaviour
             if(hit.transform.CompareTag("Enemy")){
                 this.gameObject.SetActive(false);
                 Debug.Log("hit enemy!");
-                GameObject target = hit.transform.parent.gameObject;
-                Instantiate(target.GetComponent<EnemyHealthController>().bleedingEffect,
-                    hit.point, Quaternion.identity);
-                target.GetComponent<EnemyHealthController>().BeingAttacked(bulletDamage);
             }
             else{
                 
