@@ -9,11 +9,16 @@ public class EnemyHealthController : MonoBehaviour
     public GameObject bleedingEffect;
     private bool die = false;
 
+    public int score = 10;
+
+    private GameObject player;
+
     private float destroytimer = 1.5f;
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log(hp);
+        player = GameObject.Find("Player");
     }
 
     public void BeingAttacked(float damage)
@@ -33,6 +38,9 @@ public class EnemyHealthController : MonoBehaviour
             this.GetComponent<EnemyAttack>().enabled = false;
             this.GetComponent<Idle>().enabled = false;
             this.GetComponent<Animator> ().Play ("Death1");
+
+            player.GetComponent<PlayerState>().Score_Change(score);
+            
             die = true;
         }
         if(die)
