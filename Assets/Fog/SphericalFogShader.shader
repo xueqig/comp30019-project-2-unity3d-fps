@@ -6,6 +6,8 @@ Shader "Unlit/SphericalFogShader"
         _FogColor("Fog Color", Color) = (1,1,1,1)
         _Density("Density", Range(0.0, 1.0)) = 0.5
         _MainTex ("Texture", 2D) = "white" {}
+        _SpeedX("SpeedX", Range(0.0, 0.1)) = 0.01
+        _SpeedY("SpeedY", Range(0.0, 0.1)) = 0.01
     }
     SubShader
     {
@@ -43,6 +45,8 @@ Shader "Unlit/SphericalFogShader"
             float _Density;
             sampler2D _MainTex;
             float4 _MainTex_ST;
+            float _SpeedX;
+            float _SpeedY;
 
             float3 raySphereIntersect(float3 sphereCenter, float3 sphereRadius, 
                                       float3 cameraPosition, float3 viewDirection) {
@@ -86,7 +90,7 @@ Shader "Unlit/SphericalFogShader"
 
             fixed4 frag (vertexOutput o) : SV_Target
             {
-                half4 color = tex2D(_MainTex, o.uv);
+                half4 color = tex2D(_MainTex, o.uv + (_SpeedX * _Time, _SpeedY * _Time));
 
                 float3 viewDir = normalize(o.view);
 
