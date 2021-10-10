@@ -34,6 +34,7 @@ public class PlayerState : MonoBehaviour
         staminaValue = staminaValue/player_Stamina;
         stamina_State.fillAmount = staminaValue;
     }
+    
 
     public float get_player_Health(){
         return player_Health;
