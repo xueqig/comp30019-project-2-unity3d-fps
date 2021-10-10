@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float mouseSpeed = 5f;
 
     public Transform mainCamera;
+    
 
     float RotationY = 0f;
     float RotationX = 0f;
@@ -40,7 +41,23 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //LockAndUnlockCursor();
+        
         MoveThePlayer();
+        
+        
+    }
+
+    void LockAndUnlockCursor(){
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            if(Cursor.lockState == CursorLockMode.Locked){
+                Cursor.lockState = CursorLockMode.None;
+            }
+            else{
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+        }
     }
 
     void MoveThePlayer(){
