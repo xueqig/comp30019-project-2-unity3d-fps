@@ -5,6 +5,7 @@ Shader "Unlit/SphericalFogShader"
         _FogCenter("Fog Center", Vector) = (0,0,0,0.5)
         _FogColor("Fog Color", Color) = (1,1,1,1)
         _Density("Density", Range(0.0, 1.0)) = 0.5
+        _MainTex ("Texture", 2D) = "white" {}
     }
     SubShader
     {
@@ -32,14 +33,16 @@ Shader "Unlit/SphericalFogShader"
 
             struct vertexOutput
             {
-                float3 view : TEXCOORD0;
+                float2 uv : TEXCOORD0;
+                float3 view : TEXCOORD1;
                 float4 pos : SV_POSITION;
             };
 
             float4 _FogCenter;
             fixed4 _FogColor;
             float _Density;
-            sampler2D _CamDepthTexture;
+            sampler2D _MainTex;
+            float4 _MainTex_ST;
 
             float3 raySphereIntersect(float3 sphereCenter, float3 sphereRadius, 
                                       float3 cameraPosition, float3 viewDirection) {
@@ -76,13 +79,15 @@ Shader "Unlit/SphericalFogShader"
                 vertexOutput o;
                 float4 wPos = mul(unity_ObjectToWorld, v.vertex);
                 o.pos = UnityObjectToClipPos(v.vertex);
+                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 o.view = wPos.xyz - _WorldSpaceCameraPos; // view direction
                 return o;
             }
 
             fixed4 frag (vertexOutput o) : SV_Target
             {
-                half4 color = half4(1,1,1,1);
+                half4 color = tex2D(_MainTex, o.uv);
+
                 float3 viewDir = normalize(o.view);
 
                 float centerValue = 1; // the value of the most thickness fog
@@ -95,7 +100,8 @@ Shader "Unlit/SphericalFogShader"
                 float fog_amount = saturate(val * _Density);
                 clarity *= (1 - fog_amount);
 
-                color.rgb = _FogColor.rgb;
+                color *= _FogColor;
+                // color.rgb = _FogColor.rgb;
                 color.a = 1 - clarity;
                 return color;
             }
