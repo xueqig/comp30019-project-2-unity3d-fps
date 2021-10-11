@@ -2,24 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class RandomGenerate : MonoBehaviour {
-    //该出生点生成的怪物
+    //This position's monster generated
     public GameObject targetEnemy;
-    //生成怪物的总数量
+    //The total number of the monsters
     public int enemyTotalNum = 1000;
-    //生成怪物的时间间隔
+    //The time interval of generating monsters
     public float intervalTime = 1;
-    //生成怪物的计数器
+    //The counter of generating monsters
     private int enemyCounter;
 
-    // 获得rocks对象
+    // get rocks object
     public GameObject targetRocks;
 
 	// Use this for initialization
 	void Start () {
        
-        //初始时，怪物计数为0；
+        //at start, the intial value of the monster is 0；
         enemyCounter = 0;
-        //重复生成怪物
+        // repeat generating
         InvokeRepeating("CreatEnemy", 0.5F, intervalTime);
 	}
 	
@@ -27,13 +27,13 @@ public class RandomGenerate : MonoBehaviour {
 	void Update () {
 		
 	}
-    //方法，生成怪物
+    //the generating method 
     private void CreatEnemy()
     {
-        //如果玩家存活
+        //If the player survives
 
         {
-            //创建随机点
+            //create random position
             Vector3 random_pos= this.transform.position;
             random_pos.x= this.transform.position.x + Random.Range(-68.0f, 68.0f);
             random_pos.z= this.transform.position.z + Random.Range(-119.0f, 119.0f);
@@ -45,7 +45,8 @@ public class RandomGenerate : MonoBehaviour {
             random_pos1.y = -1.26f;
 
 
-            // 循环处理所有的石头，然后判断离随机生成的随机点距离，如果距离小于1.5（根据实际情况再微调），就放弃这次随机生成，重新开始下一次生成
+            // Process all the stones in a loop, and then determine the distance from the randomly generated random point.
+            //If the distance is less than 1.5 (fine-tune according to the actual situation), then abandon this random generation and restart the next generation.
             foreach (Transform rock in targetRocks.transform){
                 Vector3 rock_pos = rock.position;
                 if ((random_pos - rock_pos).magnitude <= 1.5 || (random_pos1 - rock_pos).magnitude <= 1.5){
@@ -53,12 +54,7 @@ public class RandomGenerate : MonoBehaviour {
                 }                
             }
 
-            //生成一只怪物
-            if (Random.Range(0, 3) % 3 == 0)
-            {
-                Instantiate(targetEnemy, this.transform.position, Quaternion.identity);
-                enemyCounter++;
-            }
+        
             if (Random.Range(0, 3) % 3 == 1)
             {
                 Instantiate(targetEnemy,random_pos, Quaternion.identity);
@@ -69,10 +65,10 @@ public class RandomGenerate : MonoBehaviour {
                 Instantiate(targetEnemy, random_pos1, Quaternion.identity);
                 enemyCounter++;
             }
-            //如果计数达到最大值
+            //If the count reaches the maximum
             if (enemyCounter == enemyTotalNum)
             {
-                //停止刷新
+                //stop updating
                 CancelInvoke();
             }
         }
