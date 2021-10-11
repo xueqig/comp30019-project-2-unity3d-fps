@@ -6,6 +6,7 @@ Shader "Unlit/CrossShader"
         _RotationSpeed ("Rotation Speed", Range(0.0, 100.0)) = 50.0
         _MovingAmplitude ("Moving Amplitude", Range(0.0, 0.1)) = 0.05
         _MovingSpeed ("Moving Speed", Range(0.0, 10.0)) = 5
+        _FlashingSpeed ("Flashing Speed", Range(0.0, 5.0)) = 2.5
     }
     SubShader
     {
@@ -32,10 +33,12 @@ Shader "Unlit/CrossShader"
             };
 
             sampler2D _MainTex;
+            uniform float _BlendFct;
             float4 _MainTex_ST;
             float _RotationSpeed;
             float _MovingSpeed;
             float _MovingAmplitude;
+            float _FlashingSpeed;
 
             // https://www.youtube.com/watch?v=VzhxginBhdc
             // https://forum.unity.com/threads/transform-object-position-in-shader.591793/
@@ -65,8 +68,10 @@ Shader "Unlit/CrossShader"
 
             fixed4 frag (v2f o) : SV_Target
             {
-                fixed4 col = tex2D(_MainTex, o.uv);
-                col = float4(1, 0, 0, 1);
+                float sinTime = sin(_Time.y * _FlashingSpeed);
+                float gb = step(0.0, sinTime);
+                fixed4 col = fixed4(1, gb, gb, 1);
+                // fixed4 col = tex2D(_MainTex, o.uv);
                 return col;
             }
             ENDCG
