@@ -34,7 +34,13 @@ AnimatorController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Zorlik
   serializedVersion: 5
-  m_AnimatorParameters: []
+  m_AnimatorParameters:
+  - m_Name: Attack
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -238,7 +244,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Attack1
-  m_Speed: 1
+  m_Speed: 1.7
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -482,10 +488,10 @@ AnimatorStateMachine:
     m_Position: {x: 240, y: 480, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102531912124395218}
-    m_Position: {x: 240, y: 528, z: 0}
+    m_Position: {x: 570, y: 470, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102525708959777926}
-    m_Position: {x: 240, y: 576, z: 0}
+    m_Position: {x: 660, y: 340, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102766204974156874}
     m_Position: {x: 240, y: 624, z: 0}
