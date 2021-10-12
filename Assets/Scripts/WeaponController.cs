@@ -22,6 +22,8 @@ public class WeaponController : MonoBehaviour
     [SerializeField]
     private Transform firepoint;
 
+    public Transform bulletPoint;
+
     public float reload_Time = 2f;
 
     private float timer = 0;
@@ -155,8 +157,8 @@ public class WeaponController : MonoBehaviour
         temp_BulletPrefab.GetComponent<BulletController>().SetbulletDamage(damage);
         temp_BulletPrefab.GetComponent<BulletController>().Setspeed(shootPower);
 
-        temp_BulletPrefab.transform.position = firepoint.position;
-        temp_BulletPrefab.transform.rotation = firepoint.rotation;
+        temp_BulletPrefab.transform.position = bulletPoint.position;
+        temp_BulletPrefab.transform.rotation = bulletPoint.rotation;
 
         temp_BulletPrefab.SetActive(true);
         temp_BulletPrefab.GetComponent<BulletController>().BulletActiveFalse();

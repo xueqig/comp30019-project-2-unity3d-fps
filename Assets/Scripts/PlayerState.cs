@@ -13,6 +13,11 @@ public class PlayerState : MonoBehaviour
 
     [SerializeField]
     private Image health_State, stamina_State;
+
+    [SerializeField]
+    private int score = 0;
+
+    public Text scoreUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +38,11 @@ public class PlayerState : MonoBehaviour
     public void Stamina_Change(float staminaValue){
         staminaValue = staminaValue/player_Stamina;
         stamina_State.fillAmount = staminaValue;
+    }
+
+    public void Score_Change(int scoreValue){
+        score = score + scoreValue;
+        scoreUI.text = score.ToString();
     }
     
 
