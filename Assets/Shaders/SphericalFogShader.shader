@@ -8,6 +8,8 @@ Shader "Unlit/SphericalFogShader"
         _MainTex ("Texture", 2D) = "white" {}
         _SpeedX("SpeedX", Range(0.0, 0.1)) = 0.01
         _SpeedY("SpeedY", Range(0.0, 0.1)) = 0.01
+        _CenterValue("Center Value", Range(1.0, 20.0)) = 5.0
+        _ChangingSpeed("Changing Speed", Range(0.01, 0.1)) = 0.05
     }
     SubShader
     {
@@ -47,6 +49,8 @@ Shader "Unlit/SphericalFogShader"
             float4 _MainTex_ST;
             float _SpeedX;
             float _SpeedY;
+            float _CenterValue;
+            float _ChangingSpeed;
 
             float3 raySphereIntersect(float3 sphereCenter, float3 sphereRadius, 
                                       float3 cameraPosition, float3 viewDirection) {
@@ -94,13 +98,13 @@ Shader "Unlit/SphericalFogShader"
 
                 float3 viewDir = normalize(o.view);
 
-                float centerValue = 1; // the value of the most thickness fog
+                // float centerValue = 1; // the value of the most thickness fog
                 float clarity = 1; // how clear the fog is, clarity = 1 => fully clear 
                 float3 position = raySphereIntersect(_FogCenter.xyz, _FogCenter.w, 
                                                      _WorldSpaceCameraPos, viewDir);
                 // centerValue * 1 - how far we are inside the fog / radius
                 // saturate make the value between 0-1
-                float val = saturate(centerValue * (1 - length(position)/_FogCenter.w));
+                float val = saturate(_CenterValue * (1 - length(position)/_FogCenter.w) * _ChangingSpeed);
                 float fog_amount = saturate(val * _Density);
                 clarity *= (1 - fog_amount);
 
