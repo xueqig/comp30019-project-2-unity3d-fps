@@ -26,6 +26,7 @@ public class EnemyHealthController : MonoBehaviour
         hp -= damage;
         if (hp < 0)
             hp = 0;
+        GetComponent<Idle>().SetEngaging();
     }
 
     // Update is called once per frame
