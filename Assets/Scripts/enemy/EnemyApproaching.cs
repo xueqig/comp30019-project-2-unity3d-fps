@@ -34,7 +34,6 @@ namespace DefaultNamespace
 
         void Update()
         {
-            Debug.Log("1");
             float distance = CalculateDistance();
             Vector3 horizontalPosition = new Vector3(Player.transform.localPosition.x, this.transform.localPosition.y,
                 Player.transform.localPosition.z);
@@ -64,7 +63,6 @@ namespace DefaultNamespace
                 }
                 else
                 {
-                    Debug.Log("1");
                     findpathAgent.speed = speed;
                     ani = "Walk";
                 }

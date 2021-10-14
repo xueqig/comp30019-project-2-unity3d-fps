@@ -51,9 +51,9 @@ public class BulletController : MonoBehaviour
         
         RaycastHit hit;
         if(Physics.Raycast(ray, out hit, (nextPosition - currentPosition).magnitude)){
-            if(hit.transform.CompareTag("Enemy")){
+            if(hit.transform.CompareTag("Enemy"))
+            {
                 this.gameObject.SetActive(false);
-                Debug.Log("hit enemy!");
                 GameObject target = hit.transform.parent.gameObject;
                 Instantiate(target.GetComponent<EnemyHealthController>().bleedingEffect,
                     hit.point, Quaternion.identity);

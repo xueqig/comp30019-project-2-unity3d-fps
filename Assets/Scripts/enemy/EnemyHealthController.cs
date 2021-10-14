@@ -19,7 +19,6 @@ public class EnemyHealthController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(hp);
         player = GameObject.Find("Player");
     }
 
@@ -57,6 +56,7 @@ public class EnemyHealthController : MonoBehaviour
         }
         if (destroytimer<=0)
         {
+            GameObject.Find("CreateEnemy").GetComponent<RandomGenerate>().deathEvent();
             Destroy(this.gameObject);
         }
     }
