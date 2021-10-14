@@ -23,9 +23,12 @@ public class PlayerBeAttacked : MonoBehaviour
             GameObject.Find("Player").GetComponent<PlayerState>().enabled = false;
             GameObject.Find("GameController").GetComponent<GameController>().enabled = false;
             GameObject.Find("FPS_Character").GetComponent<WeaponController>().enabled = false;
+
+            
         }
         this.GetComponent<PlayerState>().Health_Change(hp);
     }
+
 
     public void getHealed(float heal)
     {
