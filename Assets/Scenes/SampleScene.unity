@@ -6908,7 +6908,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443018646}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -18613,7 +18613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919e067b15e970c47968306b134ec67c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimitation: 60
+  timeLimitation: 180
   timeUI: {fileID: 1765368869}
 --- !u!1 &1601381919
 GameObject:
@@ -18729,7 +18729,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634186340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8115094, z: 9}
+  m_LocalPosition: {x: 114.2, y: 0, z: 103.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -18770,6 +18770,7 @@ GameObject:
   - component: {fileID: 1642387207}
   - component: {fileID: 1642387206}
   - component: {fileID: 1642387205}
+  - component: {fileID: 1642387214}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -19007,6 +19008,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1642387214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642387204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e244a7fceeea57a4ea4ba414012fafa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healSound: {fileID: 8300000, guid: be5613c99652410468ecd61a10fe8c23, type: 3}
 --- !u!1 &1643231764
 GameObject:
   m_ObjectHideFlags: 0
