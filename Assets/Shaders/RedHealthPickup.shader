@@ -1,4 +1,4 @@
-Shader "Unlit/CrossShader"
+Shader "Unlit/RedHealthPickup"
 {
     Properties
     {
