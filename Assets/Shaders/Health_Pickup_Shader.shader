@@ -62,7 +62,6 @@ Shader "Unlit/CrossShader"
 
             v2f vert (appdata v)
             {
-                v.vertex += float4(0,0.3,0,0);
                 v.vertex = moveUpDown(v.vertex, _Time.y * _MovingSpeed, _MovingAmplitude);
                 // v.vertex = rotateAroundY(v.vertex, _Time.y * _RotationSpeed);
                 v2f o;
