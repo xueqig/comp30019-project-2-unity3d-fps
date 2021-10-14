@@ -6,7 +6,7 @@ public class PlayerBeAttacked : MonoBehaviour
 {
     // Start is called before the first frame update
     private float hp = 100;
-
+    public AudioClip cutSound;
     public GameObject gameover;
     void Start()
     {
@@ -16,6 +16,7 @@ public class PlayerBeAttacked : MonoBehaviour
     public void beingAttacked(float damage)
     {
         hp -= damage;
+        GetComponent<AudioSource>().PlayOneShot(cutSound,0.5f);
         if (hp <= 0){
             hp = 0;
             gameover.SetActive(true);
@@ -23,8 +24,6 @@ public class PlayerBeAttacked : MonoBehaviour
             GameObject.Find("Player").GetComponent<PlayerState>().enabled = false;
             GameObject.Find("GameController").GetComponent<GameController>().enabled = false;
             GameObject.Find("FPS_Character").GetComponent<WeaponController>().enabled = false;
-
-            
         }
         this.GetComponent<PlayerState>().Health_Change(hp);
     }

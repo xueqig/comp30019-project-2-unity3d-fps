@@ -18790,6 +18790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82bee20413eb8640a91519e79e15812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cutSound: {fileID: 8300000, guid: 3a8c60e39624a094fa774986d0c4638b, type: 3}
   gameover: {fileID: 439572782}
 --- !u!114 &1642387206
 MonoBehaviour:
