@@ -18700,6 +18700,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1634186342}
   - component: {fileID: 1634186341}
+  - component: {fileID: 1634186343}
   m_Layer: 0
   m_Name: CreateEnemy
   m_TagString: Untagged
@@ -18734,6 +18735,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1634186343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634186340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 937544d20769fe9498f5835ffed4fae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetEnemy: {fileID: 9093146184738401672, guid: 7623681a9488eb04985722e667a3ae0e, type: 3}
+  enemyTotalNum: 30
+  intervalTime: 0.5
+  targetRocks:
+  - {fileID: 100002, guid: 19f50471c878ee14d94a4e5dd3bb49de, type: 3}
+  - {fileID: 100000, guid: 549448c03319d4c408e52988d28a413a, type: 3}
 --- !u!1 &1642387204
 GameObject:
   m_ObjectHideFlags: 0
