@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerBeAttacked : MonoBehaviour
 {
@@ -18,13 +20,14 @@ public class PlayerBeAttacked : MonoBehaviour
         hp -= damage;
         if (hp <= 0){
             hp = 0;
-            gameover.SetActive(true);
-            GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
-            GameObject.Find("Player").GetComponent<PlayerState>().enabled = false;
-            GameObject.Find("GameController").GetComponent<GameController>().enabled = false;
-            GameObject.Find("FPS_Character").GetComponent<WeaponController>().enabled = false;
 
-            
+            //  gameover.SetActive(true);
+            //   GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
+            //  GameObject.Find("Player").GetComponent<PlayerState>().enabled = false;
+            //  GameObject.Find("GameController").GetComponent<GameController>().enabled = false;
+            //   GameObject.Find("FPS_Character").GetComponent<WeaponController>().enabled = false;
+
+            SceneManager.LoadScene(4);
         }
         this.GetComponent<PlayerState>().Health_Change(hp);
     }

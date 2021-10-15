@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerState : MonoBehaviour
 {
@@ -30,19 +31,28 @@ public class PlayerState : MonoBehaviour
         
     }
 
-    public void Health_Change(float healthValue){
+    public void Health_Change(float healthValue)
+    {
         healthValue = healthValue/player_Health;
         health_State.fillAmount = healthValue;
     }
 
-    public void Stamina_Change(float staminaValue){
+    public void Stamina_Change(float staminaValue)
+    {
         staminaValue = staminaValue/player_Stamina;
         stamina_State.fillAmount = staminaValue;
     }
 
-    public void Score_Change(int scoreValue){
+    public void Score_Change(int scoreValue)
+    {
         score = score + scoreValue;
         scoreUI.text = score.ToString();
+
+        if (score > 1000)
+        {
+            SceneManager.LoadScene(3);
+        }
+
     }
     
 
