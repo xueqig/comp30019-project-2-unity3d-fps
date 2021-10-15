@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float mouseSpeed = 5f;
 
     public Transform mainCamera;
+    
 
     float RotationY = 0f;
     float RotationX = 0f;
@@ -40,7 +41,23 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //LockAndUnlockCursor();
+        
         MoveThePlayer();
+        
+        
+    }
+
+    void LockAndUnlockCursor(){
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            if(Cursor.lockState == CursorLockMode.Locked){
+                Cursor.lockState = CursorLockMode.None;
+            }
+            else{
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+        }
     }
 
     void MoveThePlayer(){
@@ -50,6 +67,27 @@ public class PlayerMovement : MonoBehaviour
         move_Direction = transform.TransformDirection(move_Direction);
 
         move_Direction = move_Direction * speed * Time.deltaTime;
+
+         if( this.transform.position.x <= -1){
+            if(move_Direction.x < 0)
+                return;
+        }
+
+        if(this.transform.position.x >= 254){
+            if(move_Direction.x > 0)
+                return;
+        }
+
+        if(this.transform.position.z <= -37){
+            if(move_Direction.z < 0)
+                return;
+        }
+
+        if(this.transform.position.z >= 216){
+            if(move_Direction.z > 0){
+                return;
+            }
+        }
 
         if(characterController.isGrounded){
             vertical_Velocity = vertical_Velocity - gravity * Time.deltaTime;
