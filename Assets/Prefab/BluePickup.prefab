@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1759092029275273345}
   - component: {fileID: 4579452359842499659}
   - component: {fileID: 2633910721826729313}
+  - component: {fileID: -4955556531687940502}
+  - component: {fileID: 1645749264856846953}
   m_Layer: 0
   m_Name: BluePickup
   m_TagString: Untagged
@@ -96,3 +98,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spinSpeed: 200
+--- !u!64 &-4955556531687940502
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2633910721826729374}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2398289989072455413, guid: 5d07749292081432b9e04137bd965f46, type: 3}
+--- !u!114 &1645749264856846953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2633910721826729374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 753ee1bbcd1dae34c9e6bd4794c5eeb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

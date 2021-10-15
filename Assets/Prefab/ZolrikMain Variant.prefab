@@ -85,6 +85,7 @@ MonoBehaviour:
   bleedingEffect: {fileID: 8677166834497840246, guid: 49cf6972d1c9a7e4d8348f349bf08e74, type: 3}
   score: 10
   healPackage: {fileID: 4539509161147401289, guid: c2d854033baea42ac828e0d1374bcf35, type: 3}
+  StaminaPackage: {fileID: 2633910721826729374, guid: 8af9e1076346c42968c8a7142a3edbff, type: 3}
 --- !u!64 &1679312293
 MeshCollider:
   m_ObjectHideFlags: 0

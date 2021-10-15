@@ -14,7 +14,7 @@ public class EnemyHealthController : MonoBehaviour
     private GameObject player;
 
     public GameObject healPackage;
-
+    public GameObject StaminaPackage;
     private float destroytimer = 1.5f;
     // Start is called before the first frame update
     void Start()
@@ -45,9 +45,10 @@ public class EnemyHealthController : MonoBehaviour
 
             System.Random random = new System.Random();
             int randomDrop = random.Next(0, 10);
-            if (randomDrop < 9)
+            if (randomDrop < 5)
                 Instantiate(this.healPackage, this.transform.position, Quaternion.identity);
-            
+            else if(randomDrop<9)
+                Instantiate(this.StaminaPackage, this.transform.position, Quaternion.identity);
             die = true;
         }
         if(die)
