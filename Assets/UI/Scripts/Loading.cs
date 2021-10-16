@@ -7,7 +7,7 @@ public class Loading : MonoBehaviour {
 
 
     /// <summary>
-    /// 页面加载设置
+    /// Page load settings
     /// </summary>
     public Slider LoadingSlider;
     public float LoadingNum = 0;

@@ -7,17 +7,17 @@ public class WinScene : MonoBehaviour {
 
 
     /// <summary>
-    /// 胜利界面设置
+    /// Victory interface settings
     /// </summary>
-    public Button GameAgainButton;//重新开始按钮
-    public Button GameOverButton;//游戏结束按钮
+    public Button GameAgainButton;//play again button
+    public Button GameOverButton;//game over button
 
     // Use this for initialization
     void Start () {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        GameAgainButton.onClick.AddListener(GameAgainButtonClickListener);      //添加重新开始跳转游戏按钮事件
-        GameOverButton.onClick.AddListener(GameOverClickListener);              //添加结束游戏按钮事件
+        GameAgainButton.onClick.AddListener(GameAgainButtonClickListener);      //Add restart jump game button event
+        GameOverButton.onClick.AddListener(GameOverClickListener);              //Add an game over button event
     }
 
 
