@@ -9,15 +9,15 @@ public class WinScene : MonoBehaviour {
     /// <summary>
     /// Victory interface settings
     /// </summary>
-    public Button GameAgainButton;//play again button
-    public Button GameOverButton;//game over button
+    public Button GameAgainButton;//Restart button
+    public Button GameOverButton;//Game over button
 
     // Use this for initialization
     void Start () {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         GameAgainButton.onClick.AddListener(GameAgainButtonClickListener);      //Add restart jump game button event
-        GameOverButton.onClick.AddListener(GameOverClickListener);              //Add an game over button event
+        GameOverButton.onClick.AddListener(GameOverClickListener);              //Add an end game button event
     }
 
 
@@ -26,7 +26,7 @@ public class WinScene : MonoBehaviour {
         SceneManager.LoadScene(2);
     }
 
-    //退出游戏
+    //exit the game
     void GameOverClickListener()
     {
 #if UNITY_EDITOR

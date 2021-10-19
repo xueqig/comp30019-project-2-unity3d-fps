@@ -39,6 +39,11 @@ public class Gamemenu : MonoBehaviour
     {
 
         Sound.volume  = SoundSlider.value;
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            SettingLis();
+        }
         
     }
 
@@ -47,11 +52,17 @@ public class Gamemenu : MonoBehaviour
     {
         if (IsSetting == false)
         {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
             SettingPanel.SetActive(true);
             IsSetting = true;
         }
         else
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
             SettingPanel.SetActive(false);
             IsSetting = false;
         }
