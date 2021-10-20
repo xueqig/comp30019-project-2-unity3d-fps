@@ -58,7 +58,7 @@ namespace DefaultNamespace
                 string ani;
                 if (this.GetComponent<Idle>().getEngaging())
                 {
-                    findpathAgent.speed = 3.0f*speed;
+                    findpathAgent.speed = 2.5f*speed;
                      ani = "Run";
                 }
                 else

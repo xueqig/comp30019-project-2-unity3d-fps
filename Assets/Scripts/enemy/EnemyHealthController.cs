@@ -8,7 +8,7 @@ public class EnemyHealthController : MonoBehaviour
     public float hp = 100f;
     public GameObject bleedingEffect;
     private bool die = false;
-
+    private string type = "normal";
     public int score = 10;
 
     private GameObject player;
@@ -20,6 +20,10 @@ public class EnemyHealthController : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+        if (hp > 100f)
+        {
+            type = "strong";
+        }
     }
 
     public void BeingAttacked(float damage)
@@ -45,7 +49,7 @@ public class EnemyHealthController : MonoBehaviour
 
             System.Random random = new System.Random();
             int randomDrop = random.Next(0, 10);
-            if (randomDrop < 5)
+            if (randomDrop < 6)
                 Instantiate(this.healPackage, this.transform.position, Quaternion.identity);
             else if(randomDrop<9)
                 Instantiate(this.StaminaPackage, this.transform.position, Quaternion.identity);
@@ -57,7 +61,15 @@ public class EnemyHealthController : MonoBehaviour
         }
         if (destroytimer<=0)
         {
-            GameObject.Find("CreateEnemy").GetComponent<RandomGenerate>().deathEvent();
+            if (type.Equals("strong"))
+            {
+                GameObject.Find("CreateStrongerEnemy").GetComponent<RandomGenerate>().deathEvent();
+            }
+            else
+            {
+                GameObject.Find("CreateEnemy").GetComponent<RandomGenerate>().deathEvent();
+            }
+            
             Destroy(this.gameObject);
         }
     }
