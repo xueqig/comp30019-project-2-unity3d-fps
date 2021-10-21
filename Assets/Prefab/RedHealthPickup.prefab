@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2396544601744807732}
   - component: {fileID: -5594533201287013189}
   m_Layer: 0
-  m_Name: HealthPickup
+  m_Name: RedHealthPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BluePickupMaterial
+  m_Name: BlueHealthPickup
   m_Shader: {fileID: 4800000, guid: 8fcd237e138a2408bbf0f86a94a13d5e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
