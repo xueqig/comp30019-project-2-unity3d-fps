@@ -7718,6 +7718,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6923225911789279643, guid: e9eac2e05709b754ca809e27aa08470a, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7846731488546649684, guid: e9eac2e05709b754ca809e27aa08470a, type: 3}
       propertyPath: m_Name
       value: ZolrikMercenaryMain Variant

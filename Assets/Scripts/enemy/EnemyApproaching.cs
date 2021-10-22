@@ -50,7 +50,7 @@ namespace DefaultNamespace
             {
                 this.GetComponent<Animator>().StopPlayback();
                 findpathAgent.isStopped = true;
-
+                this.enabled = false;
             }
             else
             {
