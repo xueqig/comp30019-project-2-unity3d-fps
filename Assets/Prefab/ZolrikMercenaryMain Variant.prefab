@@ -72,7 +72,9 @@ MonoBehaviour:
   bleedingEffect: {fileID: 8677166834497840246, guid: 49cf6972d1c9a7e4d8348f349bf08e74, type: 3}
   score: 30
   healPackage: {fileID: 4539509161147401289, guid: c2d854033baea42ac828e0d1374bcf35, type: 3}
-  StaminaPackage: {fileID: 2633910721826729374, guid: 8af9e1076346c42968c8a7142a3edbff, type: 3}
+  staminaPackage: {fileID: 2633910721826729374, guid: 8af9e1076346c42968c8a7142a3edbff, type: 3}
+  weaponUpgradePackage: {fileID: 5675642289036527031, guid: 9435b43d59d1a487b99141d8494f549d, type: 3}
+  recoverPackage: {fileID: 7658751117872151002, guid: 92150aafc61b44266aa1b64a4e90fa4b, type: 3}
 --- !u!114 &7813329418847313713
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -78,12 +78,6 @@ public class Idle : MonoBehaviour
             Vector3 dir = new Vector3(xplus, 0, zplus);
             Vector3 currentposition = this.transform.position;
             Vector3 des = currentposition + 3.5f * dir.normalized;
-            if (this.gameObject.name.Equals("ZolrikMercenaryMain Variant"))
-            {
-                Debug.Log("cur"+currentposition);
-                Debug.Log("des"+des);
-            }
-            
             patrolAgent.SetDestination(des);
             int idle = rd.Next(idles.Length);
             this.GetComponent<Animator>().Play("Walk");

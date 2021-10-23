@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8163238182910597135}
   - component: {fileID: 7658751117872150821}
   - component: {fileID: 8502389139653102126}
-  - component: {fileID: 6346203494102402605}
+  - component: {fileID: 4301324433352543441}
   m_Layer: 0
   m_Name: GreenHealthPickup
   m_TagString: Untagged
@@ -112,7 +112,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2398289989072455413, guid: 5d07749292081432b9e04137bd965f46, type: 3}
---- !u!114 &6346203494102402605
+--- !u!114 &4301324433352543441
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +121,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7658751117872151002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 753ee1bbcd1dae34c9e6bd4794c5eeb7, type: 3}
+  m_Script: {fileID: 11500000, guid: bf6f590ab9776ea48b77708eede672ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  staminaGet: 50
