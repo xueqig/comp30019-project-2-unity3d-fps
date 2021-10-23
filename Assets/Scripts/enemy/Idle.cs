@@ -89,10 +89,15 @@ public class Idle : MonoBehaviour
 
         if (!this.patrolAgent.isStopped)
         {
-            if (patrolTimer < 3.7f)
+            float walkTime = 3.5f / this.patrolAgent.speed;
+            if (patrolTimer < 5-walkTime)
             {
                 this.patrolAgent.isStopped = true;
                 PlayIdleAnimation();
+            }
+            else
+            {
+                this.GetComponent<Animator>().Play("Walk");
             }
         }
     }
