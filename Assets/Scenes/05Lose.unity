@@ -508,7 +508,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: It's a pity that I failed
+  m_Text: It's a pity that you failed
 --- !u!222 &491845009
 CanvasRenderer:
   m_ObjectHideFlags: 0
