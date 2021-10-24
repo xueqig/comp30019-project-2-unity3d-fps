@@ -45,7 +45,7 @@ public class WeaponController : MonoBehaviour
     public Text bulletUI;
 
     private bool isReloading = false;
-    private bool upgrade = false;
+
 
     
     // Start is called before the first frame update
@@ -62,21 +62,6 @@ public class WeaponController : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Upgrade(int Damageupgrade)
-    {
-        damage += Damageupgrade;
-        upgrade = true;
-    }
-
-    public bool IsUpgraded()
-    {
-        return upgrade;
-    }
-    public void SetUpgraded(bool setting)
-    {
-        upgrade=setting;
-    }
-
     void Update()
     {
         if(Input.GetMouseButtonDown(0) && bullet_Count > 0){

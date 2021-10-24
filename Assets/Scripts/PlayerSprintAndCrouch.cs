@@ -105,11 +105,6 @@ public class PlayerSprintAndCrouch : MonoBehaviour
 
     }
 
-    public void AddStamina(float value)
-    {
-        this.stamina += value;
-    }
-
     void Crouch(){
         if(Input.GetKeyDown(KeyCode.C)){
             if(is_Crouching){
