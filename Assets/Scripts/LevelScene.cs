@@ -40,14 +40,20 @@ public class LevelScene : MonoBehaviour {
 
         if (Level_n == 1)
         {
+            GameObject temp = GameObject.Find("Dontdestroy");
+            temp.GetComponent<VariablesSaver>().level = Level_n;
             SceneManager.LoadScene(2);
         }
         else if (Level_n == 2)
         {
+            GameObject temp = GameObject.Find("Dontdestroy");
+            temp.GetComponent<VariablesSaver>().level = Level_n;
             SceneManager.LoadScene(2);
         }
         else if (Level_n == 3)
         {
+            GameObject temp = GameObject.Find("Dontdestroy");
+            temp.GetComponent<VariablesSaver>().level = Level_n;
             SceneManager.LoadScene(2);
         }
 
