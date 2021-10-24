@@ -31,7 +31,7 @@ public class Gamemenu : MonoBehaviour
         BackSettingButton.onClick.AddListener(BackSettingLis);
 
         AudioLis.gameObject.GetComponent<AudioSource>().Play();
-        muteToggle.isOn = false;
+        muteToggle.isOn = true;
 
         Overbutton.onClick.AddListener(OverbuttonListe);
 
