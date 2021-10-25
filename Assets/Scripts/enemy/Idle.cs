@@ -84,38 +84,21 @@ public class Idle : MonoBehaviour
         }
         else
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            changeTimer -= Time.deltaTime;
-=======
-=======
->>>>>>> parent of 734ca34 (Added menu functions)
             patrolTimer -= Time.deltaTime;
         }
 
         if (!this.patrolAgent.isStopped)
         {
-<<<<<<< HEAD
-            if (patrolTimer < 3.7f)
-=======
             float walkTime = 3.5f / this.patrolAgent.speed;
             if (patrolTimer < 5-walkTime)
->>>>>>> parent of 734ca34 (Added menu functions)
             {
                 this.patrolAgent.isStopped = true;
                 PlayIdleAnimation();
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 4f272ee (fix a animation issue on patrol)
-=======
->>>>>>> parent of 4f272ee (fix a animation issue on patrol)
-=======
             else
             {
                 this.GetComponent<Animator>().Play("Walk");
             }
->>>>>>> parent of 734ca34 (Added menu functions)
         }
     }
 
