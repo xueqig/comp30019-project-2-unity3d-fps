@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -24,22 +23,18 @@ public class GameController : MonoBehaviour
     void Update()
     {
         spendTime = spendTime + Time.deltaTime;
-        if(spendTime >= 1)
-        {
+        if(spendTime >= 1){
             timeSum = timeSum -1;
             timeUI.text = timeSum.ToString();
             spendTime = 0;
         }
 
-        if(timeSum <= 0)
-        {
-            //  timeUI.text = "game over";          
-            // GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
-            // GameObject.Find("Player").GetComponent<PlayerState>().enabled = false;
-            // GameObject.Find("GameController").GetComponent<GameController>().enabled = false;
-            //  GameObject.Find("FPS_Character").GetComponent<WeaponController>().enabled = false;
-
-            SceneManager.LoadScene(4);
+        if(timeSum <= 0){
+            timeUI.text = "game over";          
+            GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
+            GameObject.Find("Player").GetComponent<PlayerState>().enabled = false;
+            GameObject.Find("GameController").GetComponent<GameController>().enabled = false;
+            GameObject.Find("FPS_Character").GetComponent<WeaponController>().enabled = false;
         }
     }
 }

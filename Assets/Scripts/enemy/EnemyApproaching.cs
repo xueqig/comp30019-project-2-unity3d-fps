@@ -34,7 +34,6 @@ namespace DefaultNamespace
 
         void Update()
         {
-            Debug.Log("1");
             float distance = CalculateDistance();
             Vector3 horizontalPosition = new Vector3(Player.transform.localPosition.x, this.transform.localPosition.y,
                 Player.transform.localPosition.z);
@@ -51,7 +50,7 @@ namespace DefaultNamespace
             {
                 this.GetComponent<Animator>().StopPlayback();
                 findpathAgent.isStopped = true;
-
+                this.enabled = false;
             }
             else
             {
@@ -59,12 +58,11 @@ namespace DefaultNamespace
                 string ani;
                 if (this.GetComponent<Idle>().getEngaging())
                 {
-                    findpathAgent.speed = 3.0f*speed;
+                    findpathAgent.speed = 2.5f*speed;
                      ani = "Run";
                 }
                 else
                 {
-                    Debug.Log("1");
                     findpathAgent.speed = speed;
                     ani = "Walk";
                 }
