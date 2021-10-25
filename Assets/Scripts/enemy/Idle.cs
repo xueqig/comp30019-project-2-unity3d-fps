@@ -65,6 +65,9 @@ public class Idle : MonoBehaviour
                 this.patrolAgent.isStopped = true;
                 PlayIdleAnimation();
             }
+<<<<<<< HEAD
+>>>>>>> parent of 4f272ee (fix a animation issue on patrol)
+=======
 >>>>>>> parent of 4f272ee (fix a animation issue on patrol)
         }
     }
