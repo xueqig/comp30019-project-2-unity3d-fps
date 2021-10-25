@@ -52,7 +52,20 @@ public class Idle : MonoBehaviour
         }
         else
         {
+<<<<<<< HEAD
             changeTimer -= Time.deltaTime;
+=======
+            patrolTimer -= Time.deltaTime;
+        }
+
+        if (!this.patrolAgent.isStopped)
+        {
+            if (patrolTimer < 3.7f)
+            {
+                this.patrolAgent.isStopped = true;
+                PlayIdleAnimation();
+            }
+>>>>>>> parent of 4f272ee (fix a animation issue on patrol)
         }
     }
 }
