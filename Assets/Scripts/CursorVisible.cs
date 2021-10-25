@@ -16,12 +16,6 @@ public class CursorVisible : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape)){
             if(Cursor.lockState == CursorLockMode.Locked){
                 Cursor.lockState = CursorLockMode.None;
-                
-                #if UNITY_EDITOR
-                    UnityEditor.EditorApplication.isPlaying = false;
-                #else
-                    Application.Quit();
-                #endif
             }
             else{
                 Cursor.lockState = CursorLockMode.Locked;
