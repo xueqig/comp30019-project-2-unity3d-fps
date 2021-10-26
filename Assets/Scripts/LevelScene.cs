@@ -113,11 +113,8 @@ public class LevelScene : MonoBehaviour {
 
     void OverBtnLis()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-      Application.Quit();
-#endif
+         SceneManager.LoadScene(0);
+
     }
 
 }
