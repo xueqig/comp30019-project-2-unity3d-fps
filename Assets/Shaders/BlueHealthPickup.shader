@@ -44,37 +44,33 @@ Shader "Unlit/BlueHealthPickup"
 
             fixed4 flashing(float speed) 
             {
-                float sinTime = sin(_Time.y * speed);
-                float rg = step(0.0, sinTime);
+                float rg = step(0.0, sin(_Time.y * speed));
                 fixed4 col = fixed4(rg, rg, 1, 1);
                 return col;
             }
 
             fixed4 phongShading(v2f o, fixed4 col) 
             {
-                // Our interpolated normal might not be of length 1
                 float3 interpNormal = normalize(o.worldNormal);
 
                 // Calculate ambient RGB intensities
                 float Ka = 1;
                 float3 amb = col * UNITY_LIGHTMODEL_AMBIENT.rgb * Ka;
 
-                // Calculate diffuse RBG reflections, we save the results of L.N because we will use it again
-                // (when calculating the reflected ray in our specular component)
+                // Calculate diffuse RGB reflections
                 float fAtt = 1;
                 float Kd = 1;
                 float3 L = _WorldSpaceLightPos0; 
                 float LdotN = dot(L, interpNormal);
-                float3 dif = fAtt * _LightColor0 * Kd * col.rgb * saturate(LdotN); // Q6: Using built-in Unity light data: _LightColor0
+                float3 dif = fAtt * _LightColor0 * Kd * col.rgb * saturate(LdotN);
 
                 // Calculate specular reflections
                 float Ks = 1;
-                float specN = 5; // Values>>1 give tighter highlights
+                float specN = 25; 
                 float3 V = normalize(_WorldSpaceCameraPos - o.worldVertex.xyz);
                 // Using Blinn-Phong approximation:
-                specN = 25; // We usually need a higher specular power when using Blinn-Phong
                 float3 H = normalize(V + L);
-                float3 spe = fAtt * _LightColor0 * Ks * pow(saturate(dot(interpNormal, H)), specN); // Q6: Using built-in Unity light data: _LightColor0
+                float3 spe = fAtt * _LightColor0 * Ks * pow(saturate(dot(interpNormal, H)), specN);
 
                 // Combine Phong illumination model components
                 float4 returnColor = float4(0.0f, 0.0f, 0.0f, 0.0f);
@@ -90,12 +86,8 @@ Shader "Unlit/BlueHealthPickup"
                 v.vertex = moveUpDown(v.vertex, _MovingSpeed, _MovingDistance);
                 
                 v2f o;
-                // o.vertex = UnityObjectToClipPos(v.vertex);
 
                 // Convert Vertex position and corresponding normal into world coords.
-				// Note that we have to multiply the normal by the transposed inverse of the world 
-				// transformation matrix (for cases where we have non-uniform scaling; we also don't
-				// care about the "fourth" dimension, because translations don't affect the normal) 
                 float4 worldVertex = mul(unity_ObjectToWorld, v.vertex);
                 float3 worldNormal = normalize(mul(transpose((float3x3)unity_WorldToObject), v.normal.xyz));
 
