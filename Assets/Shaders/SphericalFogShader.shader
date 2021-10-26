@@ -1,20 +1,15 @@
-Shader "Unlit/SphericalFogShader"
+Shader "Unlit/SphericalFog"
 {
     Properties
     {
-        _FogCenter("Fog Center", Vector) = (0,0,0,0.5)
-        _FogColor("Fog Color", Color) = (1,1,1,1)
-        _Density("Density", Range(0.0, 1.0)) = 0.5
-        _MainTex ("Texture", 2D) = "white" {}
-        _SpeedX("SpeedX", Range(0.0, 0.1)) = 0.01
-        _SpeedY("SpeedY", Range(0.0, 0.1)) = 0.01
-        _CenterValue("Center Value", Range(1.0, 20.0)) = 5.0
-        _ChangingSpeed("Changing Speed", Range(0.01, 0.1)) = 0.05
+        _FogCenter("Fog Center", Vector) = (100, 1, 50, 0.5)
+        _FogColor("Fog Color", Color) = (1, 1, 1, 1)
+        _Density("Density", Range(0.0, 5)) = 2.5
+        _CenterValue("Center Value", Range(1.0, 200.0)) = 25.0
+        _ChangingSpeed("Changing Speed", Range(0.01, 2)) = 0.5
     }
     SubShader
     {
-        // Tags { "RenderType"="Transparent" }
-        // Tags { "RenderType"="Opaque" }
         Tags { "Queue"="Transparent" }
         Blend SrcAlpha OneMinusSrcAlpha
         Cull Off 
@@ -32,12 +27,10 @@ Shader "Unlit/SphericalFogShader"
             struct vertexInput
             {
                 float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
             };
 
             struct vertexOutput
             {
-                float2 uv : TEXCOORD0;
                 float3 view : TEXCOORD1;
                 float4 pos : SV_POSITION;
             };
@@ -45,10 +38,6 @@ Shader "Unlit/SphericalFogShader"
             float4 _FogCenter;
             fixed4 _FogColor;
             float _Density;
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
-            float _SpeedX;
-            float _SpeedY;
             float _CenterValue;
             float _ChangingSpeed;
 
@@ -87,18 +76,15 @@ Shader "Unlit/SphericalFogShader"
                 vertexOutput o;
                 float4 wPos = mul(unity_ObjectToWorld, v.vertex);
                 o.pos = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 o.view = wPos.xyz - _WorldSpaceCameraPos; // view direction
                 return o;
             }
 
             fixed4 frag (vertexOutput o) : SV_Target
             {
-                half4 color = tex2D(_MainTex, o.uv + (_SpeedX * _Time, _SpeedY * _Time));
-
                 float3 viewDir = normalize(o.view);
 
-                // float centerValue = 1; // the value of the most thickness fog
+                float centerValue = 1; // the value of the most thickness fog
                 float clarity = 1; // how clear the fog is, clarity = 1 => fully clear 
                 float3 position = raySphereIntersect(_FogCenter.xyz, _FogCenter.w, 
                                                      _WorldSpaceCameraPos, viewDir);
@@ -108,7 +94,7 @@ Shader "Unlit/SphericalFogShader"
                 float fog_amount = saturate(val * _Density);
                 clarity *= (1 - fog_amount);
 
-                color *= _FogColor;
+                fixed4 color = _FogColor;
                 // color.rgb = _FogColor.rgb;
                 color.a = 1 - clarity;
                 return color;
