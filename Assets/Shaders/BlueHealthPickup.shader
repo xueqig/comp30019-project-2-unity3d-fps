@@ -2,7 +2,7 @@ Shader "Unlit/BlueHealthPickup"
 {
     Properties
     {
-        _MovingAmplitude ("Moving Amplitude", Range(0.0, 0.1)) = 0.05
+        _MovingDistance ("Moving Distance", Range(0.0, 0.1)) = 0.05
         _MovingSpeed ("Moving Speed", Range(0.0, 10.0)) = 5
         _FlashingSpeed ("Flashing Speed", Range(0.0, 5.0)) = 2.5
     }
@@ -33,12 +33,12 @@ Shader "Unlit/BlueHealthPickup"
             };
 
             float _MovingSpeed;
-            float _MovingAmplitude;
+            float _MovingDistance;
             float _FlashingSpeed;
 
-            float4 moveUpDown(float4 vertex, float speed, float amplitude) 
+            float4 moveUpDown(float4 vertex, float speed, float distance) 
             {
-                float4 displacement = float4(0.0f, sin(_Time.y * speed) * amplitude, 0.0f, 0.0f);
+                float4 displacement = float4(0.0f, sin(_Time.y * speed) * distance, 0.0f, 0.0f);
                 return vertex + displacement;
             }
 
@@ -87,7 +87,7 @@ Shader "Unlit/BlueHealthPickup"
             v2f vert (appdata v)
             {
                 v.vertex += float4(0, 0.3, 0, 0);
-                v.vertex = moveUpDown(v.vertex, _MovingSpeed, _MovingAmplitude);
+                v.vertex = moveUpDown(v.vertex, _MovingSpeed, _MovingDistance);
                 
                 v2f o;
                 // o.vertex = UnityObjectToClipPos(v.vertex);
