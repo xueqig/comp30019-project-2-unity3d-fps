@@ -91,7 +91,7 @@ Shader "Unlit/BlueHealthPickup"
                 float4 worldVertex = mul(unity_ObjectToWorld, v.vertex);
                 float3 worldNormal = normalize(mul(transpose((float3x3)unity_WorldToObject), v.normal.xyz));
 
-                // Transform vertex in world coordinates to camera coordinates
+                // Transform vertex in world coordinates to clip space coordinates
 				o.vertex = UnityObjectToClipPos(v.vertex);
 
                 o.worldVertex = worldVertex;
