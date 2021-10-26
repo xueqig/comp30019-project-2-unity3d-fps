@@ -259,10 +259,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "1. Move: key WASD,                               Sprint: move key + shift.
-    \n    Shooting: left mouse.                    Jump: spacebar\n    Crouch and
-    slow down: C,             Reload\uFF1AR\n    If change to walk then press C key
-    again."
+  m_Text: "1. Move:  WASD                                        Sprint:  Shift +
+    W/A/S/D\n    Shooting:  Left Mouse                   Jump:  Space\n    Crouch
+    / Stand Up: C                       Reload\uFF1AR"
 --- !u!222 &565147453
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -532,7 +531,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '3.  ESC pause game & open menu. '
+  m_Text: '3.  Pause & Open Menu:   ESC'
 --- !u!222 &1220652105
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -690,13 +689,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'This is a one-player shooting game with 3 difficulty levels.
-
-    The
-    player need to kill monsters to get health, energy,
-
-    ammo pickups and reach
-    the target score to win.'
+  m_Text: "Forest Runner is a first-person shooter game with \n3 difficulty levels.
+    The player need to kill monsters \nto get health, energy, ammo pickups and reach
+    the \ntarget score to win."
 --- !u!222 &1412714440
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -857,9 +852,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "2. Killing a general monster:  Score + 10, there is a chance\n    to pick
     up Red /Blue pickup. \n    Killing a special monster:  Score + 30, there is a
-    chance\n    to pick up Green/ Ammo pickup.\n    Red pickup: Health + 30%\n   
-    Blue pickup: Energy + 50%\n    Green pickup: Health & Engergy: both + 50%\n   
-    Ammo pickup: Attack Damage + 5"
+    chance\n    to pick up Green/ Ammo pickup.\n    Red pickup:   Health + 30%\n   
+    Blue pickup:   Energy + 50%\n    Green pickup:   Health & Energy + 50%\n    Ammo
+    pickup:   Attack Damage + 5"
 --- !u!222 &1986687214
 CanvasRenderer:
   m_ObjectHideFlags: 0
