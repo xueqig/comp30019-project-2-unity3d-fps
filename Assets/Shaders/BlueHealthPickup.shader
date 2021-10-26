@@ -32,20 +32,19 @@ Shader "Unlit/BlueHealthPickup"
                 float3 worldNormal : TEXCOORD1;
             };
 
-            uniform float _BlendFct;
             float _MovingSpeed;
             float _MovingAmplitude;
             float _FlashingSpeed;
 
             float4 moveUpDown(float4 vertex, float speed, float amplitude) 
             {
-                float4 displacement = float4(0.0f, sin(speed) * amplitude, 0.0f, 0.0f);
+                float4 displacement = float4(0.0f, sin(_Time.y * speed) * amplitude, 0.0f, 0.0f);
                 return vertex + displacement;
             }
 
             fixed4 flashing(float speed) 
             {
-                float sinTime = sin(speed);
+                float sinTime = sin(_Time.y * speed);
                 float rg = step(0.0, sinTime);
                 fixed4 col = fixed4(rg, rg, 1, 1);
                 return col;
@@ -88,7 +87,7 @@ Shader "Unlit/BlueHealthPickup"
             v2f vert (appdata v)
             {
                 v.vertex += float4(0, 0.3, 0, 0);
-                v.vertex = moveUpDown(v.vertex, _Time.y * _MovingSpeed, _MovingAmplitude);
+                v.vertex = moveUpDown(v.vertex, _MovingSpeed, _MovingAmplitude);
                 
                 v2f o;
                 // o.vertex = UnityObjectToClipPos(v.vertex);
@@ -110,7 +109,7 @@ Shader "Unlit/BlueHealthPickup"
 
             fixed4 frag (v2f o) : SV_Target
             {
-                fixed4 col = flashing(_Time.y * _FlashingSpeed);
+                fixed4 col = flashing(_FlashingSpeed);
                 fixed4 returnColor = phongShading(o, col);
                 return returnColor;
             }
