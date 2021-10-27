@@ -59,12 +59,16 @@ public class WeaponController : MonoBehaviour
     {
         bullet_Count = magazineCapacity;
         bulletUI.text = bullet_Count.ToString(); 
+        GameObject temp = GameObject.Find("Dontdestroy");
+        int level = temp.GetComponent<VariablesSaver>().level;
+        if (level == 1)
+            damage *= 2;
     }
 
     // Update is called once per frame
-    public void Upgrade(int Damageupgrade)
+    public void Upgrade(float Damageupgrade)
     {
-        damage += Damageupgrade;
+        damage *= Damageupgrade;
         upgrade = true;
     }
 

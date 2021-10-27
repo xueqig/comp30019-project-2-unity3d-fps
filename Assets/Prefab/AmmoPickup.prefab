@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c15a097e1687d7438f579e74b7c178d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPowerUpgrade: 5
+  weaponPowerUpgrade: 1.25
 --- !u!65 &4213971357214175774
 BoxCollider:
   m_ObjectHideFlags: 0
