@@ -108,7 +108,7 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 45
+    agentSlope: 35.4
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
@@ -7041,7 +7041,7 @@ MonoBehaviour:
   reload_Time: 2
   damage: 20
   bulletPrefab: {fileID: 490726322}
-  shootPower: 40
+  shootPower: 60
   ejectPower: 150
   bullet_AliveTime: 3
   bulletUI: {fileID: 53618671}
@@ -20827,8 +20827,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetEnemy: {fileID: 9093146184738401672, guid: 7623681a9488eb04985722e667a3ae0e, type: 3}
-  enemyTotalNum: 35
-  intervalTime: 0.4
+  enemyTotalNum: 45
+  intervalTime: 0.3
 --- !u!1 &1642387204
 GameObject:
   m_ObjectHideFlags: 0

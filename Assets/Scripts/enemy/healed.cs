@@ -20,8 +20,11 @@ public class healed : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        other.gameObject.GetComponent<HealSound>().PlayHealSound();
-        other.gameObject.GetComponent<PlayerBeAttacked>().getHealed(heal);
-        Destroy(this.gameObject);
+        if (other.gameObject.name.Equals("Player"))
+        {
+            other.gameObject.GetComponent<HealSound>().PlayHealSound();
+            other.gameObject.GetComponent<PlayerBeAttacked>().getHealed(heal);
+            Destroy(this.gameObject);
+        }
     }
 }
