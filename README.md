@@ -313,4 +313,8 @@ User Interface
 * We include pictures in instruction to make it easy to read and understand.
 * We display “Game Over” at the center of the screen when the player has died or time has run out, and make the menu automatically pop up after 1 second. 
 
+## 9 Reference
+* Crosshair UI: https://assetstore.unity.com/packages/2d/gui/icons/crosshairs-plus-139902
+* Player health & endurance UI: https://assetstore.unity.com/packages/2d/gui/icons/rpg-unitframes-1-powerful-metal-95252
+* ICON UI: https://assetstore.unity.com/packages/2d/gui/icons/icons-ui-95116
 
