@@ -62,7 +62,7 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 | Yibo Peng  | Player movement function, attacked function, the UI of player, Procedural Generation Techniques - Bullet Generation, Camera Motion     |  Done |
 | Zhiming Deng    | Enemy movement function, attack function, enemy patrol and chase, enemy health controller, enemy generation, usability and difficulty testing      |  Done |
 | Student Name 3    | README Format      |  Amazing! |
-| Yuxiang Wu    | enemy random generated, game landscape, user menu, pause game,different levels menu, apply questionnaire method |  Done |
+| Yuxiang Wu    | enemy random generated, game landscape, user menu, start,pause,exit game,different levels menu, apply questionnaire method |  Done |
 
 ## Technologies
 Project is created with:
@@ -168,7 +168,7 @@ For the effect of the pickups, please see Section 3.3
 We will have special enemies on the map. Different from the ordinary enemy, they are stronger with higher HP and attack damage. Correspondingly, rewards(score, pickup) of killing a special enemy is better than killing an ordinary enemy.
 
 ### 3.5 Menu 
-Our start menu has two buttons “Start” and “Help”, and a close button on the right top side for existing. If the user clicks the “Help” button, an instruction interface pops out. If the user clicks the “Start” button, the game will enter into a new page for users to select different level modes, which have easy, normal and difficult levels and click the main green button under the level window to enter the game. Once entering the game, users can press the “ESC” to pop out the menu to adjust sound or mute, and users can choose Again to restart the game, choose Level to choose a different level scene,  and choose the Quit button, the game will go back to the main menu. Users can see the amount of bullets on the left bottom side and a timer and score on the right top side. Once the user loses the game, there will be a game over interface that pops out, vice versa, if the user wins, there will be a win interface. 
+Our start menu has three buttons “Start” and “Help”, and a close button on the right top side for existing. If the user clicks the “Help” button, an instruction interface pops out. If the user clicks the “Start” button, the game will enter into a new page for users to select different level modes, which have easy, normal and difficult levels and click the main green button under the level window to enter the game. Once entering the game, users can press the “ESC” to pop out the menu to adjust sound or mute, and users can choose Again to restart the game, choose Level to choose a different level scene,  and choose the Quit button, the game will go back to the main menu. Users can see the amount of bullets on the left bottom side and a timer and score on the right top side. Once the user loses the game, there will be a game over interface that pops out, vice versa, if the user wins, there will be a win interface. 
 
 ## 4 Graphics Pipeline and Camera Motion
 ### 4.1 Graphics Pipeline
@@ -297,7 +297,7 @@ There are 6 participants who answer our questionnaire which is a summary table b
 
 | No. | Questions | Choices | count |
 |---|---|---|---|
-| 1 | Your Gender | Male | 5 |
+| 1 | Your gender | Male | 5 |
 |  |  | Female | 1 |
 |  2 |  Your age | 12-18 | 0 |
 |  |  | 19-24 | 3 |
