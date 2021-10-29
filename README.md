@@ -61,8 +61,8 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 | :---         |     :---:      |          ---: |
 | Yibo Peng  | Player movement function, attacked function, the UI of player, Procedural Generation Techniques - Bullet Generation, Camera Motion     |  Done |
 | Zhiming Deng    | Enemy movement function, attack function, enemy patrol and chase, enemy health controller, enemy generation, usability and difficulty testing      |  Done |
-| Xueqi Guan    | Health pickup shader, fog shader, game landscape, game instruction menu, cooperative evaluation      |  Amazing! |
-| Yuxiang Wu    | enemy random generated, game landscape, user menu, start, pause, exit game,different levels menu, apply questionnaire method |  Done |
+| Xueqi Guan    | Health pickup shader, fog shader, game landscape, game instruction menu, cooperative evaluation      |  Done |
+| Yuxiang Wu    | Enemy random generated, game landscape, user menu, start, pause, exit game, different levels menu, apply questionnaire method |  Done |
 
 ## Technologies
 Project is created with:
@@ -97,8 +97,6 @@ Our game is named Forest Runner, which is a first-person shooter game with 3 dif
 * Ammo pick up can make the player's damage increase 25%.
 
  The user needs to reach the target score on the menu within the limited time to win the game.
-
-
 
 ## 3 Objects and Entities Design
 ### 3.1 Player
@@ -142,12 +140,12 @@ The game environment is a forest which contains grass, trees and rocks. The game
 
 ### 3.3 Pickups
 There are four different types of pickups: health pickup, energy pickup and ammo pickup. Each of them has different effects on the player.
-Red health pickup: Player’s health will be restored by 30%. If the player's health is already full, picking it up causes no effect.
-Blue energy pickup: Player’s energy will be restored by 50%. If the player's energy is already full, picking it up causes no effect.
-Green health and energy pickup: Both Player’s health and energy will be restored by 50%. If the player's health or energy is already full, picking it up causes no effect.
-Ammo pickup: Player’s attack damage will be increased by 25%. The player can only get this pickup once in a game.
+* Red health pickup: Player’s health will be restored by 30%. If the player's health is already full, picking it up causes no effect.
+* Blue energy pickup: Player’s energy will be restored by 50%. If the player's energy is already full, picking it up causes no effect.
+* Green health and energy pickup: Both Player’s health and energy will be restored by 50%. If the player's health or energy is already full, picking it up causes no effect.
+* Ammo pickup: Player’s attack damage will be increased by 5. The player can only get this pickup once in a game.
 
-### 3.4 enemies
+### 3.4 Enemies
 An enemy object in this game will automatically attack the player if the player attacks or gets too close to it. Also, the player needs to kill enemies to get scores to win the game. Then, I will further introduce the enemy's movement, attack, being attacked and death in detail.
 
 An enemy can run or walk when chasing the player. We decide that when the player get too close to an enemy it will chase the player by walking, while if the enemy is attacked by the player it will run to chase the player. And we use the navigation AI agent in Unity for the enemy to find a valid path to the player.
@@ -243,9 +241,9 @@ Path to the source file: Assets/Shaders/SphericalFog.shader
 The shader has 5 properties:
 * FogCenter: The center of the fog. It is stored in a vector with 4 values. The first 3 values represent x, y and z coordinates. The last value represents the radius of the spherical fog. The center has the highest density.
 * FogColor: The color of the fog. It is set to white by default.
-* Density: The overall density of the fog
-* CenterValue: The density of the fog at the center
-* ChagingSpeed: The speed of changing in density when player move from edge to center 
+* Density: The overall density of the fog.
+* CenterValue: The density of the fog at the center.
+* ChagingSpeed: As shown in the .gif image, at different place, the clarity is different. ChagingSpeed is the speed of changing in clarity when player move from edge of the fog to center of the fog.
 
 Others
 * Tag { “Queue” = “Transparent” }: This forces the object to be drawn at last 
@@ -274,9 +272,6 @@ In our game, the spark effect of the muzzle uses a particle system. This part ca
 
 ## 8 Evaluation 
 ### 8.1 Observational Method: Cooperative Evaluation
-Description of the querying and observational methods used, including a description of the participants (how many, demographics), description of the methodology (which techniques did you use, what did you have participants do, how did you record the data), and feedback gathered. 
-
-Document the changes made to your game based on the information collected during the evaluation.
 Description of Participants
 There are 5 people who participate in the evaluation. Three of them are university students aged 20-25. Two of them are game development company employees aged 20-25. 
 
@@ -293,7 +288,7 @@ Cooperative evaluation requires experimenters to let participants perform a task
 * Win the game
 
 ### 8.2  Querying Method: Questionnaire
-There are 6 participants who answer our questionnaire which is a summary table below. 
+There are 6 participants who answer our questionnaire. The result is summarised in the table below. 
 
 | No. | Questions | Choices | count |
 |---|---|---|---|
