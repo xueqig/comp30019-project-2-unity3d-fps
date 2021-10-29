@@ -54,7 +54,7 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 
 | Name | Task | State |
 | :---         |     :---:      |          ---: |
-| Yibo Peng  | Inital project, finish player moving function (include normal, sprint, crouch style)     |  Done |
+| Yibo Peng  | Player movement function, attacked function, the UI of player, Procedural Generation Techniques - Bullet Generation, Camera Motion     |  Done |
 | Student Name 2    | Shader      |  Testing |
 | Student Name 3    | README Format      |  Amazing! |
 
