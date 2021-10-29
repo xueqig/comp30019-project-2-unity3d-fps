@@ -235,6 +235,10 @@ Fragment shader does the following:
 * It returns a color
 
 ### 6.2 Fog Shader
+<p align="center">
+  <img src="Gifs/Fog-Shader.gif"  width="300" >
+</p>
+
 Path to the source file: Assets/Shaders/SphericalFog.shader
 
 The shader has 5 properties:
@@ -263,6 +267,10 @@ Fragment shader does the following:
 * Output fog color with the alpha value set to 1 - clarity.
 
 ## 7 Particle System
+<p align="center">
+  <img src="Gifs/player_attack.gif"  width="300" >
+</p>
+
 In our game, the spark effect of the muzzle uses a particle system. This part can be checked at Assets/Models/Muzzle Flash. In the game, when the player fires a gun, the effect is immediately generated at the muzzle, and the shape of the gun spark will be randomly selected from the preset four, then the particle system will be closed after 0.5 seconds, making the shooting effect more realistic.
 
 ## 8 Evaluation 
@@ -304,15 +312,5 @@ Game playing
 User Interface
 * We include pictures in instruction to make it easy to read and understand.
 * We display “Game Over” at the center of the screen when the player has died or time has run out, and make the menu automatically pop up after 1 second. 
-	
-## Using Images
-
-You can use images/gif by adding them to a folder in your repo:
-
-<p align="center">
-  <img src="Gifs/player_attack.gif"  width="300" >
-</p>
-
-
 
 
