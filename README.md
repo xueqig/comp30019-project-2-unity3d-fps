@@ -341,6 +341,7 @@ User interface
 When player has died or time has run out, display “Game Over” and menu at the center of the page
 
 Improvement made based on participants feedback
+
 Game playing
 * Under easy mode, we increased player damage to make it easier to win.
 * We increased the number of monsters to make it easier for the player to find monsters.
