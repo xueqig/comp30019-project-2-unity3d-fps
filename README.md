@@ -59,9 +59,7 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 | Student Name 3    | README Format      |  Amazing! |
 
 ## Explanation of the game
-Our game is a first person shooter (FPS) that....
-
-You can use emojis :+1: but do not over use it, we are looking for professional work. If you would not add them in your job, do not use them here! :shipit:
+Our game is named Forest Runner, which is a first-person shooter game with 3 different difficulty levels. The player needs to kill goblins to get Health, Energy, Ammo Pickups and reach the target score to win.
 
 	
 ## Technologies
