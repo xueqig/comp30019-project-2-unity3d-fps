@@ -61,7 +61,7 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 | :---         |     :---:      |          ---: |
 | Yibo Peng  | Player movement function, attacked function, the UI of player, Procedural Generation Techniques - Bullet Generation, Camera Motion     |  Done |
 | Zhiming Deng    | Enemy movement function, attack function, enemy patrol and chase, enemy health controller, enemy generation, usability and difficulty testing      |  Done |
-| Xueqi Guan    | Health pickup shader, fog shader, game landscape, game instruction menu, cooperative evaluation, make group video      |  Done |
+| Xueqi Guan    | Health&Energy&Ammo Pickup shader, fog shader, game landscape, game instruction menu, cooperative evaluation, make group video      |  Done |
 | Yuxiang Wu    | Enemy random generated, game menu UI, user menu, start, pause, exit game, different levels menu, apply questionnaire method |  Done |
 
 ## Technologies
