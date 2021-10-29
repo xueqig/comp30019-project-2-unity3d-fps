@@ -20,9 +20,12 @@ public class Recover : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        other.gameObject.GetComponent<HealSound>().PlayHealSound();
-        other.gameObject.GetComponent<PlayerBeAttacked>().getHealed(heal);
-        other.gameObject.GetComponent<PlayerSprintAndCrouch>().AddStamina(staminaGet);
-        Destroy(this.gameObject);
+        if (other.gameObject.name.Equals("Player"))
+        {
+            other.gameObject.GetComponent<HealSound>().PlayHealSound();
+            other.gameObject.GetComponent<PlayerBeAttacked>().getHealed(heal);
+            other.gameObject.GetComponent<PlayerSprintAndCrouch>().AddStamina(staminaGet);
+            Destroy(this.gameObject);
+        }
     }
 }

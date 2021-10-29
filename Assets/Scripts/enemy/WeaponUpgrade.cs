@@ -19,9 +19,12 @@ public class WeaponUpgrade : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        other.gameObject.GetComponent<HealSound>().PlayHealSound();
-        GameObject.Find("FPS_Character").GetComponent<WeaponController>().Upgrade(weaponPowerUpgrade);
-        Destroy(this.gameObject);
+        if (other.gameObject.name.Equals("Player"))
+        {
+            other.gameObject.GetComponent<HealSound>().PlayHealSound();
+            GameObject.Find("FPS_Character").GetComponent<WeaponController>().Upgrade(weaponPowerUpgrade);
+            Destroy(this.gameObject);
+        }
     }
     // Start is called before the first frame update
 }

@@ -20779,7 +20779,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1634186342}
-  - component: {fileID: 1634186341}
   - component: {fileID: 1634186343}
   m_Layer: 0
   m_Name: CreateEnemy
@@ -20788,19 +20787,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1634186341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1634186340}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ad2203f4b8838a4b8ca4fdfeb5741c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 9093146184738401672, guid: 7623681a9488eb04985722e667a3ae0e, type: 3}
 --- !u!4 &1634186342
 Transform:
   m_ObjectHideFlags: 0

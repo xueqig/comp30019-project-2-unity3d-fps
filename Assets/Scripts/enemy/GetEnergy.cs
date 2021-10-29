@@ -19,9 +19,12 @@ public class GetEnergy : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        other.gameObject.GetComponent<HealSound>().PlayHealSound();
-        other.gameObject.GetComponent<PlayerSprintAndCrouch>().AddStamina(staminaGet);
-        Destroy(this.gameObject);
+        if (other.gameObject.name.Equals("Player"))
+        {
+            other.gameObject.GetComponent<HealSound>().PlayHealSound();
+            other.gameObject.GetComponent<PlayerSprintAndCrouch>().AddStamina(staminaGet);
+            Destroy(this.gameObject);
+        }
     }
     // Start is called before the first frame update
 }
