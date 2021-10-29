@@ -100,11 +100,7 @@ public class Gamemenu : MonoBehaviour
 
     public void OverbuttonListe()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-      Application.Quit();
-#endif
+         SceneManager.LoadScene(0);
     }
 
     void LevelbuttonLis()

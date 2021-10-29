@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponUpgrade : MonoBehaviour
 {
-    public int weaponPowerUpgrade = 5;
+    public float weaponPowerUpgrade = 1.25f;
     // Start is called before the first frame update
     void Start()
     {

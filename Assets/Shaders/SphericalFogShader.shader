@@ -31,7 +31,7 @@ Shader "Unlit/SphericalFog"
 
             struct vertexOutput
             {
-                float3 view : TEXCOORD1;
+                float3 view : TEXCOORD0;
                 float4 pos : SV_POSITION;
             };
 
@@ -61,12 +61,9 @@ Shader "Unlit/SphericalFog"
                     t1 = temp;
                 }
 
-                if (t0 < 0) {
-                    t0 = 0;
-                    if (t0 < 0) {
-                        return 0;
-                    }
-                }
+                // If camera is inside the spherical fog, t0 will be 0
+                t0 = max(t0, 0);
+
                 float3 position = cameraPosition + viewDirection * t0;
                 return position;
             }
@@ -95,7 +92,6 @@ Shader "Unlit/SphericalFog"
                 clarity *= (1 - fog_amount);
 
                 fixed4 color = _FogColor;
-                // color.rgb = _FogColor.rgb;
                 color.a = 1 - clarity;
                 return color;
             }
