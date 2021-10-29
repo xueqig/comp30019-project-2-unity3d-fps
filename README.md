@@ -294,15 +294,16 @@ Cooperative evaluation requires experimenters to let participants perform a task
 ### 8.2  Querying Method: Questionnaire
 There are 6 participants who answer our questionnaire which is a summary table below. 
 
-| 1 | Your Gender | Male | 5 |
+| No. | Questions | Choices | count |
 |---|---|---|---|
+| 1 | Your Gender | Male | 5 |
 |  |  | Female | 1 |
-|   2 |   Your age | 12-18 | 0 |
+|  2 |  Your age | 12-18 | 0 |
 |  |  | 19-24 | 3 |
 |  |  | 25-29 | 3 |
 |  |  | 30-40 | 0 |
 |  |  | Over 40 | 0 |
-|   3 |   Your job | Company Manager | 0 |
+|  3 |  Your job | Company Manager | 0 |
 |  |  | Student | 3 |
 |  |  | Company staff | 3 |
 |  |  | Freelance individual | 0 |
@@ -318,19 +319,19 @@ There are 6 participants who answer our questionnaire which is a summary table b
 | 7 | Do you like the characters in the game? |  Yes | 0 |
 |  |  |  No | 6 |
 | 8 | Do you feel comfortable for the difficulties of different levels?  | The difficulties are fair | 2 |
-|  |  | The difficulties are not fair   | 4 |
+|  |  | The difficulties are not fair | 4 |
 | 9 | Do you feel comfortable with the Game Operation keys? | Yes | 5 |
 |  |  | No | 1 |
 | 10 | Do you like the game scene and environment design of the Forest Runner? | Yes | 5 |
 |  |  | No | 1 |
 | 11 | Is it easy for you to win the game? | Easy | 2 |
-|  |  | A little challenging |   |
+|  |  | A little challenging |  |
 |  |  | difficult | 4 |
 | 12 | Can you see the objects clearly in Forest Runner? | Yes | 5 |
 |  |  | No | 1 |
 | 13 | Are you comfortable with the movement speed of the player or monsters in Forest Runner? | Yes | 5 |
 |  |  | No | 1 |
-| 14 | Could you write your suggestions for Forest Runner?  | User 1: Could you please add a mouse dpi changing function in settings. User 3: 1. Aim arrow to crosshair 2. There is a problem with the frequency of monster refresh, and it wastes a lot of time to find monster 3. There is no need for cataract fog in difficult mode, you can increase the difficulty of the game by increasing the number and intensity of monsters, and reach 100 points in a limited time; You can also increase difficulty by reducing the number of bullets. Easy mode provides 100 bullets, normal mode 50 bullets, and Hard mode 30 bullets. You can also change the terrain to make it more difficult, etc., without the cataract fog User 4 Increase shooting accuracy. User 5 Monster speed is too fast and the interval between shots is too long. |   |
+| 14 | Could you write your suggestions for Forest Runner?  | User 1: Could you please add a mouse dpi changing function in settings. User 3: 1. Aim arrow to crosshair 2. There is a problem with the frequency of monster refresh, and it wastes a lot of time to find monster 3. There is no need for cataract fog in difficult mode, you can increase the difficulty of the game by increasing the number and intensity of monsters, and reach 100 points in a limited time; You can also increase difficulty by reducing the number of bullets. Easy mode provides 100 bullets, normal mode 50 bullets, and Hard mode 30 bullets. You can also change the terrain to make it more difficult, etc., without the cataract fog User 4 Increase shooting accuracy. User 5 Monster speed is too fast and the interval between shots is too long. |  |
 
 ### 8.3  Feedback from Participants Summary
 Game playing
