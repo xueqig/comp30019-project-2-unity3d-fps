@@ -139,17 +139,16 @@ Our start menu has two buttons “Start” and “Help”, and a close button on
 
 ## 4 Graphics Pipeline and Camera Motion
 4.1 Graphics Pipeline
-Simplified graphic pipeline: Vertices -> Vertex Shader -> Rasterizer -> Interpolator -> Pixel Shader (Texture) -> Screen
-
 The rendering pipeline, also known as the graphics pipeline, represents the process of getting a
 virtual environment drawn onto the computer screen.
-Vertices: Vertices in mesh.
-Vertex Shader: Vertex shader takes vertices in mesh as input, and converts them from local space to clip space. Then output vertices in clip space.
-Rasterizer: This process is handled by unity.
-Interpolator: This process is handled by unity.
-Fragment Shader: Fragment shader takes the output from vertex shader as input, and outputs a color.
-Texture: Texture will be applied in fragment shader.
-Screen: Render pixels on the screen.
+
+Simplified graphic pipeline: Vertices -> Vertex Shader -> Rasterizer -> Interpolator -> Fragment Shader (Texture) -> Screen
+* Vertices: Vertices in mesh.
+* Vertex Shader: Vertex shader takes vertices in mesh as input, and converts them from local space to clip space. Then output vertices in clip space.
+* Rasterizer: This process is handled by unity.
+* Interpolator: This process is handled by unity.
+* Fragment Shader: Fragment shader takes the output from vertex shader as input, and outputs a color. Texture will be applied in fragment shader.
+* Screen: Render pixels on the screen.
 
 4.2 Camera Motion
 Because our game is a first-person shooter game, in our design, the camera is equivalent to the player’s eyes. When the player moves, as a sub-part of the player, the movement of the camera is exactly the same as the movement of the player. The player can control the horizontal rotation of the camera with the mouse, which is used to simulate the effect of the player looking around in the game. This design can make the player more immersive when playing. 
