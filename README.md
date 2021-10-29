@@ -305,6 +305,13 @@ User Interface
 * We include pictures in instruction to make it easy to read and understand.
 * We display “Game Over” at the center of the screen when the player has died or time has run out, and make the menu automatically pop up after 1 second. 
 	
+## Using Images
+
+You can use images/gif by adding them to a folder in your repo:
+
+<p align="center">
+  <img src="Gifs/player_attack.gif"  width="300" >
+</p>
 
 
 
