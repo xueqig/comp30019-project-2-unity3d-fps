@@ -103,7 +103,7 @@ Our game is named Forest Runner, which is a first-person shooter game with 3 dif
 ### 3.1 Player
 The player object is one of the most complicated objects in this game, it consists of several sub-objects, which are the player’s movement module, the player’s attack module, the player’s attribute module, and the player’s information display module. Next, I will introduce the design of these modules in detail.
  
-#### The player’s movement module
+#### **The player’s movement module**
 This part follows the current mainstream first-person shooter game’s character movement, and the purpose is to allow players who have played this type of game to get started with the game at the fastest speed without novice guidance. At the same time, the key setting of the game is very scientific, which is in line with the playing habits of mainstream players.
  
 In our game, the player has three modes of movement, namely walking, sprinting, and crouching. The movement of the player is controlled by the mouse and the “W”, “A”, “S”, “D” key. The mouse controls the direction of the character's travel, and the corresponding keys control the character's front, back, left, and right movement. Additionally, pressing the “Space” key can make the player jump in our game.
@@ -112,14 +112,14 @@ The default movement method of the player is walking. Holding down the left shif
  
 Besides, in order to make the player’s gaming experience more realistic, these three modes have different footstep sound effects. Taking the walking state as a reference, when the player sprints, the footstep sound effects are rapid and louder. On the contrary, when the player is in a crouching state, the footstep sound effects are slow and the sound is smaller.
  
-#### The player’s attack module
+#### **The player’s attack module**
 Considering the production cost and material limitations of this game, players in this game only have a gun as a means of attack. The player uses the mouse to aim and click the left mouse button to shoot.
  
 In order to make the player’s shooting experience more realistic, we have added the animation of the player changing the bomb, the animation of holding the gun when idle, the sound effect of shooting, and the spark of the muzzle.
  
 In order to create an exciting game atmosphere, we reasonably set the player’s ammunition quantity and reload time. When the player’s remaining ammo quantity is 0 or after the player presses the “R” key, the player will have a period of time to reload and cannot attack.
  
-#### The player’s attribute module
+#### **The player’s attribute module**
 In this game, the player has the following attributes, life value, endurance value, score, remaining time, remaining bullets.
  
 When the player is attacked, the health value will be reduced. When it is reduced to 0, the game is over. The player can restore a certain amount of health by eating the blood bag.
@@ -132,7 +132,7 @@ In order to increase the tension and rhythm of the game, the player has a time l
  
 The player also has a bullet limit. When the number of bullets is 0, the player will be unable to attack for a period of time due to reloading, which can also enhance the excitement of the game.
  
-#### The player’s information display module
+#### **The player’s information display module**
 In order to improve the player’s gaming experience, the player’s health, endurance, score, remaining time and remaining bullets will be displayed on the screen with different UI. At the same time, the UI layout of this game refers to the UI layout of current mainstream games. The player's health and stamina values are displayed in the upper left corner of the screen; the score and remaining time are displayed in the upper right corner of the screen; the remaining bullets are displayed in the lower left corner of the screen. This design is in line with the play habits of most players.
 In addition, in order to improve the player’s shooting experience and reduce the difficulty of the game, we provide a shooting sight so that the player will hit the target more easily.
  
