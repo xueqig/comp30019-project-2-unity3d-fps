@@ -181,6 +181,10 @@ There are some advantages of using this procedural generation mechanism. First, 
 
 ## 6 Shader
 ### 6.1 Pickup Shader
+<p align="center">
+  <img src="Gifs/Health-Pickup-Shader.gif"  width="300" >
+</p>
+
 Path to the source file: Assets/Shaders/RedHealthPickup.shader
 
 The shader has 3 properties:
