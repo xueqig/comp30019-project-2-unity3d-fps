@@ -291,6 +291,9 @@ Cooperative evaluation requires experimenters to let participants perform a task
 * Pause the game and continue playing
 * Win the game
 
+### 8.2  Querying Method: Questionnaire
+There are 6 participants who answer our questionnaire which is a summary table below. 
+
 | 1 | Your Gender | Male | 5 |
 |---|---|---|---|
 |  |  | Female | 1 |
@@ -329,7 +332,7 @@ Cooperative evaluation requires experimenters to let participants perform a task
 |  |  | No | 1 |
 | 14 | Could you write your suggestions for Forest Runner?  | User 1: Could you please add a mouse dpi changing function in settings. User 3: 1. Aim arrow to crosshair 2. There is a problem with the frequency of monster refresh, and it wastes a lot of time to find monster 3. There is no need for cataract fog in difficult mode, you can increase the difficulty of the game by increasing the number and intensity of monsters, and reach 100 points in a limited time; You can also increase difficulty by reducing the number of bullets. Easy mode provides 100 bullets, normal mode 50 bullets, and Hard mode 30 bullets. You can also change the terrain to make it more difficult, etc., without the cataract fog User 4 Increase shooting accuracy. User 5 Monster speed is too fast and the interval between shots is too long. |   |
 
-Feedback from Participants
+### 8.3  Feedback from Participants Summary
 Game playing
 * Game audio is great, game environment looks good, game logic is easy to understand, game control is easy to understand and pickups look great.
 * Under easy mode, it is still hard to survive if the player meets the stronger monster at the beginning. 
