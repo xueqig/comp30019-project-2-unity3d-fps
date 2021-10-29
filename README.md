@@ -340,7 +340,7 @@ User interface
 * The game instruction font size and font type is difficult to read.
 When player has died or time has run out, display “Game Over” and menu at the center of the page
 
-Improvement made based on participants feedback
+Improvement made based on participants feedback:
 
 Game playing
 * Under easy mode, we increased player damage to make it easier to win.
