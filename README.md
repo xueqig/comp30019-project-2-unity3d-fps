@@ -54,6 +54,7 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 * [6 Shader](#6-Shader)
 * [7 Particle System](#7-Particle-System)
 * [8 Evaluation](#8-Evaluation)
+* [9 Using Images](#9-Using-Images)
 
 ## Team Members
 
