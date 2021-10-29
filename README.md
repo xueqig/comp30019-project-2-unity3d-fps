@@ -60,7 +60,7 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 | Name | Task | State |
 | :---         |     :---:      |          ---: |
 | Yibo Peng  | Player movement function, attacked function, the UI of player, Procedural Generation Techniques - Bullet Generation, Camera Motion     |  Done |
-| Zhiming Deng    | Enemy movement function, attack function, enemy patrol and chase, enemy health controller, enemy generation, usability and dificulty testing      |  Done |
+| Zhiming Deng    | Enemy movement function, attack function, enemy patrol and chase, enemy health controller, enemy generation, usability and difficulty testing      |  Done |
 | Student Name 3    | README Format      |  Amazing! |
 
 ## Technologies
@@ -315,4 +315,5 @@ User Interface
 * Crosshair UI: https://assetstore.unity.com/packages/2d/gui/icons/crosshairs-plus-139902
 * Player health & endurance UI: https://assetstore.unity.com/packages/2d/gui/icons/rpg-unitframes-1-powerful-metal-95252
 * ICON UI: https://assetstore.unity.com/packages/2d/gui/icons/icons-ui-95116
+* enemy model(with animations):https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/fantasy-monsters-zolrik-zolrikmercenary-strategy-rpg-124327
 
