@@ -54,13 +54,14 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 * [6 Shader](#6-Shader)
 * [7 Particle System](#7-Particle-System)
 * [8 Evaluation](#8-Evaluation)
+* [9 References](#9-References)
 
 ## Team Members
 
 | Name | Task | State |
 | :---         |     :---:      |          ---: |
 | Yibo Peng  | Player movement function, attacked function, the UI of player, Procedural Generation Techniques - Bullet Generation, Camera Motion     |  Done |
-| Zhiming Deng    | Enemy movement function, attack function, enemy patrol and chase, enemy health controller, enemy generation, usability and dificulty testing      |  Done |
+| Student Name 2    | Shader      |  Testing |
 | Student Name 3    | README Format      |  Amazing! |
 
 ## Technologies
@@ -149,12 +150,15 @@ Ammo pickup: Player’s attack damage will be increased by 25%. The player can o
 ### 3.4 enemies
 An enemy object in this game will automatically attack the player if the player attacks or gets too close to it. Also, the player needs to kill enemies to get scores to win the game. Then, I will further introduce the enemy's movement, attack, being attacked and death in detail.
 
+Movement
 An enemy can run or walk when chasing the player. We decide that when the player get too close to an enemy it will chase the player by walking, while if the enemy is attacked by the player it will run to chase the player. And we use the navigation AI agent in Unity for the enemy to find a valid path to the player.
 In the movement mechanism, There is one thing worth attention. If An enemy is walking to the player because it thinks the player is too close to it, it will stop if the player run far away. However, if the enemy is attacked and then runs to the player, the player could only kill the enemy or it will never give up.
 Moreover, the enemy will frequently patrol in a small random range to add the chance of encountering the player.
 
+Attack
 The enemy’s attack mode is close combat. The enemy will use a broadsword to attack the player when getting close enough.  When being attacked, the player’s HP will decrease periodically according to the enemy’s attack frequency. Enemy cannot move and attack at the same time. It is worth saying that we also provide a sound effect of cutting for the enemy’s attack animation, and it is also very useful to remind the player of being attacked.
 
+Being attacked and death
 Like the player, an enemy contains a health controller. An enemy’s HP will decrease when the enemy is shooted by the player. And it will die when its HP decreases to 0. 
 And also after an enemy dies, it will drop off a pickup.
 Pickup of killing an ordinary enemy:
@@ -163,7 +167,7 @@ Pickup of killing a special enemy:
 First time: 100% probability of a Ammo pickup
 After the first time: 100% probability of green pickup
 For the effect of the pickups, please see Section 3.3
-
+Special enemy
 We will have special enemies on the map. Different from the ordinary enemy, they are stronger with higher HP and attack damage. Correspondingly, rewards(score, pickup) of killing a special enemy is better than killing an ordinary enemy.
 
 ### 3.5 Menu 
@@ -199,10 +203,9 @@ Implementation details
 We have two important parameters for the generation algorithm: max limit of the number of alive enemies and the frequency of generation. 
 For instance, currently we set the max limit to 45 and frequency to 0.3. Then the system will generate an enemy at a random valid position on the map every 0.3 second and it will stop doing this until the number of alive enemies reaches 45. Note that dead enemies will not be counted, so this algorithm ensures that finally the number of alive enemies is 45. Moreover, for saving memory, a dead enemy object will be destroyed after the death animation finishes playing. 
 For the random position of an enemy generation, we also set some restrictions on that. The position will not be very close to the player and any obstacle items which an enemy cannot get through.
-
+advantages
 There are some advantages of using this procedural generation mechanism. First, using periodical generation rather than a one-off generation at the beginning will let the program run smoothly. Second, using a max number limit could ensure a stable density of enemies. Third, generation at a random position is also helpful to ensure that enemies evenly split. In other words, if generated at random positions, enemies probably distribute evenly on the map instead of gathering in a small corner.
 
-for details, see the codes in RandomGenerate.cs file
 ## 6 Shader
 ### 6.1 Pickup Shader
 <p align="center">
@@ -311,7 +314,7 @@ User Interface
 * We include pictures in instruction to make it easy to read and understand.
 * We display “Game Over” at the center of the screen when the player has died or time has run out, and make the menu automatically pop up after 1 second. 
 
-## 9 Reference
+## 9 References
 * Crosshair UI: https://assetstore.unity.com/packages/2d/gui/icons/crosshairs-plus-139902
 * Player health & endurance UI: https://assetstore.unity.com/packages/2d/gui/icons/rpg-unitframes-1-powerful-metal-95252
 * ICON UI: https://assetstore.unity.com/packages/2d/gui/icons/icons-ui-95116
