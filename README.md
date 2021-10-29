@@ -65,7 +65,7 @@ Our game is named Forest Runner, which is a first-person shooter game with 3 dif
 The user opens the game landscape and can see the main menu with three buttons: Start , Help and a close button.  To see the game instructions, just click the “Help” button and can see the instructions details. And there is a close button on the top right side for the player to exit the game. To start the game,  just click the “Start”. After clicking the “Start” button, the user can see the Level Choice menu and can choose “Easy”, “Normal” , “Difficult” level scenes. After choosing a level, the user needs to click the main green button under the level instruction part to start the game. During the game, the user can press “ESC” to mute the background music or choose “Again” or “Quit” the game. For the key operation, WASD keys for player move, if pressing at the same time, the player will sprint. Clicking the left mouse will start shooting. Space key for Jump. C key for Crouch or Stand up. R key for Reload. Killing the general monster, score increases 10, there is a chance to pick up Red or Blue pickups. Killing a special monster, score increases 30, there is a chance to pick up Green or Ammo pick up. Red pick up can make the player's health increase 30%.Blue pick up can make the player's energy increase 50%.Green pick up can make the player's health and health increase 50%.Ammo pick up can make the player's damage increase 25%. And the user needs to reach the target score on the menu within the limited time to win the game.
 
 ## 3 Objects and Entities Design
-3.1 Player
+### 3.1 Player
 The player object is one of the most complicated objects in this game, it consists of several sub-objects, which are the player’s movement module, the player’s attack module, the player’s attribute module, and the player’s information display module. Next, I will introduce the design of these modules in detail.
  
 The player’s movement module
@@ -101,17 +101,17 @@ The player’s information display module
 In order to improve the player’s gaming experience, the player’s health, endurance, score, remaining time and remaining bullets will be displayed on the screen with different UI. At the same time, the UI layout of this game refers to the UI layout of current mainstream games. The player's health and stamina values are displayed in the upper left corner of the screen; the score and remaining time are displayed in the upper right corner of the screen; the remaining bullets are displayed in the lower left corner of the screen. This design is in line with the play habits of most players.
 In addition, in order to improve the player’s shooting experience and reduce the difficulty of the game, we provide a shooting sight so that the player will hit the target more easily.
  
-3.2 Environment
+### 3.2 Environment
 The game environment is a forest which contains grass, trees and rocks. The game has two modes: normal mode and foggy mode. If foggy mode is selected, there will be fog in the forest.
 
-3.3 Pickups 
+### 3.3 Pickups
 There are four different types of pickups: health pickup, energy pickup and ammo pickup. Each of them has different effects on the player.
 Red health pickup: Player’s health will be restored by 30%. If the player's health is already full, picking it up causes no effect.
 Blue energy pickup: Player’s energy will be restored by 50%. If the player's energy is already full, picking it up causes no effect.
 Green health and energy pickup: Both Player’s health and energy will be restored by 50%. If the player's health or energy is already full, picking it up causes no effect.
 Ammo pickup: Player’s attack damage will be increased by 25%. The player can only get this pickup once in a game.
 
-3.4 enemies
+### 3.4 enemies
 An enemy object in this game will automatically attack the player if the player attacks or gets too close to it. Also, the player needs to kill enemies to get scores to win the game. Then, I will further introduce the enemy's movement, attack, being attacked and death in detail.
 
 Movement
@@ -134,11 +134,11 @@ For the effect of the pickups, please see Section 3.3
 Special enemy
 We will have special enemies on the map. Different from the ordinary enemy, they are stronger with higher HP and attack damage. Correspondingly, rewards(score, pickup) of killing a special enemy is better than killing an ordinary enemy.
 
-3.5 Menu 
+### 3.5 Menu 
 Our start menu has two buttons “Start” and “Help”, and a close button on the right top side for existing. If the user clicks the “Help” button, an instruction interface pops out. If the user clicks the “Start” button, the game will enter into a new page for users to select different level modes, which have easy, normal and difficult levels and click the main green button under the level window to enter the game. Once entering the game, users can press the “ESC” to pop out the menu to adjust sound or mute, and users can choose Again to restart the game, choose Level to choose a different level scene,  and choose the Quit button, the game will go back to the main menu. Users can see the amount of bullets on the left bottom side and a timer and score on the right top side. Once the user loses the game, there will be a game over interface that pops out, vice versa, if the user wins, there will be a win interface. 
 
 ## 4 Graphics Pipeline and Camera Motion
-4.1 Graphics Pipeline
+### 4.1 Graphics Pipeline
 The rendering pipeline, also known as the graphics pipeline, represents the process of getting a
 virtual environment drawn onto the computer screen.
 
@@ -150,18 +150,18 @@ Simplified graphic pipeline: Vertices -> Vertex Shader -> Rasterizer -> Interpol
 * Fragment Shader: Fragment shader takes the output from vertex shader as input, and outputs a color. Texture will be applied in fragment shader.
 * Screen: Render pixels on the screen.
 
-4.2 Camera Motion
+### 4.2 Camera Motion
 Because our game is a first-person shooter game, in our design, the camera is equivalent to the player’s eyes. When the player moves, as a sub-part of the player, the movement of the camera is exactly the same as the movement of the player. The player can control the horizontal rotation of the camera with the mouse, which is used to simulate the effect of the player looking around in the game. This design can make the player more immersive when playing. 
 
 Second, in order to make the characters in the game more in line with human behavior in reality, we have restricted the pitch angle of the camera. The pitch angle of the camera ranges from -45 degrees to +45 degrees.
  
 ## 5 Procedural Generation Techniques
-5.1 Bullet
+### 5.1 Bullet
 Because our game is a shooting game, in the game, the player will shoot a lot and quickly. For the generation and destruction of bullets, we adopt the design pattern of object pool and singleton. When the game scene is loaded (that is, the awake phase), the bullet pool is created, and the number of bullets is enough for the player to be created. The number of bullets in the bullet pool is set based on our repeated experiments and the maximum number of bullets that the player can fire at a time.
 The advantage of using this design pattern is to reuse bullets in the pool, without the overhead of allocating memory and creating bullets in the heap, without the overhead of releasing memory and destroying bullets in the heap, thereby reducing the burden on the garbage collector and avoiding memory jitter; no need to repeat initialize object state. Using this design pattern can increase the number of running frames of our game and give players a better experience. Using the singleton mode can further increase the number of frames of the game, because there is only one instance of the bullet object pool in the memory, which reduces the memory overhead.
 If the bullet is generated when the player shooting action occurs, it will undoubtedly consume a lot of computer resources and reduce the number of running frames of the game. 
 
-5.2 Enemy
+### 5.2 Enemy
 The system will generate enemies one by one and periodically as time passes. Then we will introduce this mechanism in details
 Implementation details
 We have two important parameters for the generation algorithm: max limit of the number of alive enemies and the frequency of generation. 
@@ -171,7 +171,7 @@ advantages
 There are some advantages of using this procedural generation mechanism. First, using periodical generation rather than a one-off generation at the beginning will let the program run smoothly. Second, using a max number limit could ensure a stable density of enemies. Third, generation at a random position is also helpful to ensure that enemies evenly split. In other words, if generated at random positions, enemies probably distribute evenly on the map instead of gathering in a small corner.
 
 ## 6 Shader
-6.1 Pickup Shader
+### 6.1 Pickup Shader
 Path to the source file: Assets/Shaders/RedHealthPickup.shader
 
 The shader has 3 properties:
@@ -195,7 +195,7 @@ Fragment shader does the following:
 * It updates the color by applying phongShading method
 * It returns a color
 
-6.2 Fog Shader
+### 6.2 Fog Shader
 Path to the source file: Assets/Shaders/SphericalFog.shader
 
 The shader has 5 properties:
@@ -227,7 +227,7 @@ Fragment shader does the following:
 In our game, the spark effect of the muzzle uses a particle system. This part can be checked at Assets/Models/Muzzle Flash. In the game, when the player fires a gun, the effect is immediately generated at the muzzle, and the shape of the gun spark will be randomly selected from the preset four, then the particle system will be closed after 0.5 seconds, making the shooting effect more realistic.
 
 ## 8 Evaluation 
-8.1 Observational Method: Cooperative Evaluation
+### 8.1 Observational Method: Cooperative Evaluation
 Description of the querying and observational methods used, including a description of the participants (how many, demographics), description of the methodology (which techniques did you use, what did you have participants do, how did you record the data), and feedback gathered. 
 
 Document the changes made to your game based on the information collected during the evaluation.
