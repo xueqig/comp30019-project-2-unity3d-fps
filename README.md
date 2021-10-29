@@ -291,16 +291,60 @@ To create a gif from a video you can follow this [link](https://ezgif.com/video-
 
 ## Code Snippets 
 
-You can include a code snippet here, but make sure to explain it! 
-Do not just copy all your code, only explain the important parts.
+Procedural Generation Techniques - Bullet Generation
 
 ```c#
-public class firstPersonController : MonoBehaviour
+public class BulletPool : MonoBehaviour
 {
-    //This function run once when Unity is in Play
-     void Start ()
+    //Singleton Pattern object
+    private static BulletPool uniqueInstance;
+
+    public GameObject bulletPrefab;
+
+    // Set the number of bullets in the object pool
+    public int bulletPoolSize = 40;
+
+    private int bulletInterator = 0;
+
+    private GameObject[] bulletPool;
+
+    // When the scene is generated, generate all the required bullets
+    void Awake(){
+        // Create a object list, the size is the value of bulletPoolSize
+        bulletPool = new GameObject[bulletPoolSize];
+        
+        // Create every bullet object
+        for(int i = 0; i < bulletPoolSize; i++){
+            GameObject bullet = Instantiate(bulletPrefab, Vector3.zero, Quaternion.identity);
+            
+            // Set every bullet statuse is unactive
+            bullet.SetActive(false);
+            
+            // put bullet object in the bullet list
+            bulletPool[i] = bullet;
+        }
+        uniqueInstance = this;
+    }
+
+    // Get the bullet pool object
+    public static BulletPool GetBulletPoolInstance()
     {
-      standMotion();
+        if (uniqueInstance == null)
+        {
+            uniqueInstance = new BulletPool();
+        }
+
+        return uniqueInstance;
+    }
+
+    // When player shoot, call bullet objects in order
+    public GameObject GetBullet(){
+        GameObject bullet = bulletPool[bulletInterator];
+        bulletInterator++;
+        if(bulletInterator == bulletPoolSize){
+            bulletInterator = 0;
+        }
+        return bullet;
     }
 }
 ```
