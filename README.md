@@ -54,6 +54,7 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 * [6 Shader](#6-Shader)
 * [7 Particle System](#7-Particle-System)
 * [8 Evaluation](#8-Evaluation)
+* [9 Using Images](#9-Using-Images)
 
 ## Team Members
 
@@ -305,7 +306,7 @@ User Interface
 * We include pictures in instruction to make it easy to read and understand.
 * We display “Game Over” at the center of the screen when the player has died or time has run out, and make the menu automatically pop up after 1 second. 
 	
-## Using Images
+## 9 Using Images
 
 You can use images/gif by adding them to a folder in your repo:
 
