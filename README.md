@@ -67,8 +67,6 @@ You can use emojis :+1: but do not over use it, we are looking for professional 
 ## Technologies
 Project is created with:
 * Unity 2021.1.13f1
-* Ipsum version: 2.33
-* Ament library version: 999
 
 ## Using Images
 
