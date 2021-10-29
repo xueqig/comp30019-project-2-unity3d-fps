@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.07000714, g: 0.07318051, b: 0.084905684, a: 1}
+  m_Color: {r: 0.9528302, g: 0.5768167, b: 0.030562414, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -20694,6 +20694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeLimitation: 180
   timeUI: {fileID: 1765368869}
+  gameover: {fileID: 439572782}
 --- !u!1 &1601381919
 GameObject:
   m_ObjectHideFlags: 0
