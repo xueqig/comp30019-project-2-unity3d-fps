@@ -290,7 +290,7 @@ Cooperative evaluation requires experimenters to let participants perform a task
 ### 8.2  Querying Method: Questionnaire
 There are 6 participants who answer our questionnaire. The result is summarised in the table below. 
 
-| No. | Questions | Choices | count |
+| No. | Questions | Choices | Count |
 |---|---|---|---|
 | 1 | Your gender | Male | 5 |
 |  |  | Female | 1 |
