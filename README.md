@@ -45,10 +45,15 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 
 ## Table of contents
 * [Team Members](#team-members)
-* [Explanation of the game](#explanation-of-the-game)
 * [Technologies](#technologies)
-* [Using Images](#using-images)
-* [Code Snipets ](#code-snippets)
+* [1 Game Description](#1-Game-Description)
+* [2 Game Instruction](#2-Game-Instruction)
+* [3 Objects and Entities Design](#3-Objects-and-Entities-Design)
+* [4 Graphics Pipeline and Camera Motion](#4-Graphics-Pipeline-and-Camera-Motion)
+* [5 Procedural Generation Techniques](#5-Procedural-Generation-Techniques)
+* [6 Shader](#6-Shader)
+* [7 Particle System](#7-Particle-System)
+* [8 Evaluation](#8-Evaluation)
 
 ## Team Members
 
