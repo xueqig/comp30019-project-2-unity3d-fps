@@ -59,10 +59,11 @@ Remember that _"this document"_ should be `well written` and formatted **appropr
 | Student Name 3    | README Format      |  Amazing! |
 
 ## Explanation of the game
-1 Game Description
+
+### 1. Game Description
 Our game is named Forest Runner, which is a first-person shooter game with 3 different difficulty levels. The player needs to kill goblins to get Health, Energy, Ammo Pickups and reach the target score to win.
 
-2 Game Instruction
+### 2. Game Instruction
 The user opens the game landscape and can see the main menu with three buttons: Start , Help and a close button.  To see the game instructions, just click the “Help” button and can see the instructions details. And there is a close button on the top right side for the player to exit the game. To start the game,  just click the “Start”. After clicking the “Start” button, the user can see the Level Choice menu and can choose “Easy”, “Normal” , “Difficult” level scenes. After choosing a level, the user needs to click the main green button under the level instruction part to start the game. During the game, the user can press “ESC” to mute the background music or choose “Again” or “Quit” the game. For the key operation, WASD keys for player move, if pressing at the same time, the player will sprint. Clicking the left mouse will start shooting. Space key for Jump. C key for Crouch or Stand up. R key for Reload. Killing the general monster, score increases 10, there is a chance to pick up Red or Blue pickups. Killing a special monster, score increases 30, there is a chance to pick up Green or Ammo pick up. Red pick up can make the player's health increase 30%.Blue pick up can make the player's energy increase 50%.Green pick up can make the player's health and health increase 50%.Ammo pick up can make the player's damage increase 25%. And the user needs to reach the target score on the menu within the limited time to win the game.
 
 
