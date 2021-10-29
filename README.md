@@ -176,53 +176,53 @@ There are some advantages of using this procedural generation mechanism. First, 
 Path to the source file: Assets/Shaders/RedHealthPickup.shader
 
 The shader has 3 properties:
-MovingDistance: The distance of up and down movement
-MovingSpeed: The speed of up and down movement
-FlashingSpeed: The speed of flashing (color changing)
+* MovingDistance: The distance of up and down movement
+* MovingSpeed: The speed of up and down movement
+* FlashingSpeed: The speed of flashing (color changing)
 
 Methods used in vertex and fragment shader:
-moveUpDown: It takes the vertex position, moving speed and moving distance as inputs, adds vertex position by displacement: (0, sin(_Time.y * speed) * distance, 0, 0), and finally returns the new vertex position. The sin(_Time.y * speed) provides a number between -1 and 1, which can ensure the object moves up and down in an oscillating fashion.
-flashing: It takes the speed as an input, and returns either red or white colour. The step(0, sin(_Time.y * speed)) returns either 0 or 1, and it is used to determine the G and B value. If the value is 1, the output color will be (1, 1, 1, 1), otherwise, the output color will be (1, 0, 0, 1).
-phongShading: It takes vertex position and color as inputs. Then it calculates ambient RGB intensities, diffuse RGB reflections, specular reflections and sum up all these values and return.  
+* moveUpDown: It takes the vertex position, moving speed and moving distance as inputs, adds vertex position by displacement: (0, sin(_Time.y * speed) * distance, 0, 0), and finally returns the new vertex position. The sin(_Time.y * speed) provides a number between -1 and 1, which can ensure the object moves up and down in an oscillating fashion.
+* flashing: It takes the speed as an input, and returns either red or white colour. The step(0, sin(_Time.y * speed)) returns either 0 or 1, and it is used to determine the G and B value. If the value is 1, the output color will be (1, 1, 1, 1), otherwise, the output color will be (1, 0, 0, 1).
+* phongShading: It takes vertex position and color as inputs. Then it calculates ambient RGB intensities, diffuse RGB reflections, specular reflections and sum up all these values and return.  
 
 Vertex shader does the following: 
-It updates the vertex position by applying moveUpDown method before transforming the vertex position to clip space.
-It converts vertex position and normal to world space by multiplying them by unity_ObjectToWorld.
-It converts vertex position in world space to clip space by using UnityObjectToClipPos method.
+* It updates the vertex position by applying moveUpDown method before transforming the vertex position to clip space.
+* It converts vertex position and normal to world space by multiplying them by unity_ObjectToWorld.
+* It converts vertex position in world space to clip space by using UnityObjectToClipPos method.
 The output of the vertex shader will become the input of the fragment shader.
 
 Fragment shader does the following:
-It uses the flashing method to get either red or white color. 
-It updates the color by applying phongShading method
-It returns a color
+* It uses the flashing method to get either red or white color. 
+* It updates the color by applying phongShading method
+* It returns a color
 
 6.2 Fog Shader
 Path to the source file: Assets/Shaders/SphericalFog.shader
 
 The shader has 5 properties:
-FogCenter: The center of the fog. It is stored in a vector with 4 values. The first 3 values represent x, y and z coordinates. The last value represents the radius of the spherical fog. The center has the highest density.
-FogColor: The color of the fog. It is set to white by default.
-Density: The overall density of the fog
-CenterValue: The density of the fog at the center
-ChagingSpeed: The speed of changing in density when player move from edge to center 
+* FogCenter: The center of the fog. It is stored in a vector with 4 values. The first 3 values represent x, y and z coordinates. The last value represents the radius of the spherical fog. The center has the highest density.
+* FogColor: The color of the fog. It is set to white by default.
+* Density: The overall density of the fog
+* CenterValue: The density of the fog at the center
+* ChagingSpeed: The speed of changing in density when player move from edge to center 
 
 Others
-Tag { “Queue” = “Transparent” }: This forces the object to be drawn at last 
-Blend SrcAlpha OneMinusSrcAlpha: This allows us to have a transparent object.
-ZTest Always: Turning on ZTest allows us to put objects within the fog.
+* Tag { “Queue” = “Transparent” }: This forces the object to be drawn at last 
+* Blend SrcAlpha OneMinusSrcAlpha: This allows us to have a transparent object.
+* ZTest Always: Turning on ZTest allows us to put objects within the fog.
 
 Methods:
-raySphereIntersect: It takes sphere center, sphere radius, camera position and view direction as inputs and returns the ray sphere intersection position. The camera position is ray origin, view direction is ray direction. The intersection point(s) is computed by applying the quadratic formula: t0 = (-b + sqrt(b^2 - 4ac)) / 2a, t1 = (-b - sqrt(b^2 - 4ac)) / 2a, and the smaller t value is used to calculate the intersection position. 
+* raySphereIntersect: It takes sphere center, sphere radius, camera position and view direction as inputs and returns the ray sphere intersection position. The camera position is ray origin, view direction is ray direction. The intersection point(s) is computed by applying the quadratic formula: t0 = (-b + sqrt(b^2 - 4ac)) / 2a, t1 = (-b - sqrt(b^2 - 4ac)) / 2a, and the smaller t value is used to calculate the intersection position. 
 
 Vertex shader does the following: 
-It converts vertex position and normal to world space by multiplying them by unity_ObjectToWorld.
-It converts vertex position in world space to clip space by using UnityObjectToClipPos method.
-It calculates the view direction by subtracting vertex position in world space by _WorldSpaceCameraPos
+* It converts vertex position and normal to world space by multiplying them by unity_ObjectToWorld.
+* It converts vertex position in world space to clip space by using UnityObjectToClipPos method.
+* It calculates the view direction by subtracting vertex position in world space by _WorldSpaceCameraPos
 
 Fragment shader does the following: 
-Use the raySphereIntersect method to get the intersection position.
-The intersection position determines how far the camera is inside the fog, and therefore, it can be used to calculate the clarity.
-Output fog color with the alpha value set to 1 - clarity.
+* Use the raySphereIntersect method to get the intersection position.
+* The intersection position determines how far the camera is inside the fog, and therefore, it can be used to calculate the clarity.
+* Output fog color with the alpha value set to 1 - clarity.
 
 ## 7 Particle System
 In our game, the spark effect of the muzzle uses a particle system. This part can be checked at Assets/Models/Muzzle Flash. In the game, when the player fires a gun, the effect is immediately generated at the muzzle, and the shape of the gun spark will be randomly selected from the preset four, then the particle system will be closed after 0.5 seconds, making the shooting effect more realistic.
