@@ -24,8 +24,14 @@ public class PlayerBeAttacked : MonoBehaviour
             GameObject.Find("Player").GetComponent<PlayerState>().enabled = false;
             GameObject.Find("GameController").GetComponent<GameController>().enabled = false;
             GameObject.Find("FPS_Character").GetComponent<WeaponController>().enabled = false;
+            Invoke("popmenu",1f);
         }
         this.GetComponent<PlayerState>().Health_Change(hp);
+    }
+
+    private void popmenu(){
+        GameObject temp = GameObject.Find("Canvas");
+        temp.GetComponent<Gamemenu>().SettingLis();
     }
 
 

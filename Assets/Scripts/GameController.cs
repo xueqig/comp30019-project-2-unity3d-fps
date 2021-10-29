@@ -11,6 +11,8 @@ public class GameController : MonoBehaviour
     private float spendTime = 0;
     private int timeSum = 60;
 
+    public GameObject gameover; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,15 @@ public class GameController : MonoBehaviour
             GameObject.Find("Player").GetComponent<PlayerState>().enabled = false;
             GameObject.Find("GameController").GetComponent<GameController>().enabled = false;
             GameObject.Find("FPS_Character").GetComponent<WeaponController>().enabled = false;
+            gameover.SetActive(true);
+            Invoke("popmenu",1f);
         }
+
+        
+    }
+
+    private void popmenu(){
+        GameObject temp = GameObject.Find("Canvas");
+        temp.GetComponent<Gamemenu>().SettingLis();
     }
 }
