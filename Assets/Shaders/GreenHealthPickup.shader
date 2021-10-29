@@ -44,8 +44,6 @@ Shader "Unlit/GreenHealthPickup"
             float _MovingAmplitude;
             float _FlashingSpeed;
 
-            // https://www.youtube.com/watch?v=VzhxginBhdc
-            // https://forum.unity.com/threads/transform-object-position-in-shader.591793/
             float4 rotateAroundY(float4 vertex, float speed) {
                 float4x4 rotationMatrix;
                 rotationMatrix[0] = float4(cos(speed), 0, sin(speed), 0);

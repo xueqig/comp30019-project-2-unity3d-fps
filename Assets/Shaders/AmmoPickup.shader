@@ -60,7 +60,7 @@ Shader "Unlit/AmmoPickup"
 
             v2f vert (appdata v)
             {
-                v.vertex += float4(0,0.3,0,0);
+                v.vertex += float4(0,0.1,0,0);
                 v.vertex = moveUpDown(v.vertex, _Time.y * _MovingSpeed, _MovingAmplitude);
                 // v.vertex = rotateAroundY(v.vertex, _Time.y * _RotationSpeed);
                 v2f o;
@@ -119,40 +119,6 @@ Shader "Unlit/AmmoPickup"
                 returnColor.a = col.a;
 
                 return returnColor;
-            }
-            ENDCG
-        }
-
-        Pass
-        {
-            Tags {"LightMode"="ShadowCaster"}
-
-            CGPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
-            #pragma multi_compile_shadowcaster
-            #include "UnityCG.cginc"
-            
-            struct appdata {
-                float4 vertex : POSITION;
-                float3 normal : NORMAL;
-                float2 uv : TEXCOORD0;
-            };
-
-            struct v2f { 
-                V2F_SHADOW_CASTER;
-            };
-
-            v2f vert(appdata v)
-            {
-                v2f o;
-                TRANSFER_SHADOW_CASTER_NORMALOFFSET(o)
-                return o;
-            }
-
-            float4 frag(v2f o) : SV_Target
-            {
-                SHADOW_CASTER_FRAGMENT(o)
             }
             ENDCG
         }
