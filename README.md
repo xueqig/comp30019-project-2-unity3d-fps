@@ -359,5 +359,4 @@ User Interface
 * Ray sphere intersect: https://www.scratchapixel.com/lessons/3d-basic-rendering/minimal-ray-tracer-rendering-simple-shapes/ray-sphere-intersection
 * Fog shader: https://github.com/leon196/ThreeSeconds/blob/master/Assets/Shaders/Spherical%20Fog.shader
 * Fog shader: https://forum.unity.com/threads/volume-fog-shader.76113/
-
-
+* FPS weapon: https://assetstore.unity.com/packages/3d/characters/humanoids/sci-fi/easy-fps-73776
