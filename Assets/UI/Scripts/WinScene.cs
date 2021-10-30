@@ -29,11 +29,7 @@ public class WinScene : MonoBehaviour {
     //exist game
     void GameOverClickListener()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-      Application.Quit();
-#endif
+        SceneManager.LoadScene(0);
     }
 
 }
