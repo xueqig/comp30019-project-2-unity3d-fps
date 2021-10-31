@@ -10,6 +10,8 @@ Do not forget **One member** of your group must submit a text file to the LMS (C
 
 You can add a link to your Gameplay Video here but you must have already submit it by **4pm, October 17**
 
+Link to Gameplay video: https://youtu.be/isjt3VMnujc
+
 # Project-2 README
 
 You must modify this `README.md` that describes your application, specifically what it does, how to use it, and how you evaluated and improved it.
@@ -243,7 +245,7 @@ The shader has 5 properties:
 * FogColor: The color of the fog. It is set to white by default.
 * Density: The overall density of the fog.
 * CenterValue: The density of the fog at the center.
-* ChagingSpeed: As shown in the .gif image, at different place, the clarity is different. ChagingSpeed is the speed of changing in clarity when player move from edge of the fog to center of the fog.
+* ChagingSpeed: As shown in the .gif image, the center of the spherical fog has lowest clarity and the edge of the spherical fog has highest clarity. ChagingSpeed is the speed of changing in clarity when player move from edge of the fog to center of the fog.
 
 Others
 * Tag { “Queue” = “Transparent” }: This forces the object to be drawn at last 
@@ -260,7 +262,7 @@ Vertex shader does the following:
 
 Fragment shader does the following: 
 * Use the raySphereIntersect method to get the intersection position.
-* Calculate the clarity at current camera position by using the intersection position. As shown in the .gif image, different position has different clarity. Clarity means how clear the fog is, and if it is equals to 1, it means fully clear. The clarity is determined by how far the camera is inside the fog. Therefore, we used the intersection position to calculate the clarity. 
+* Use the intersection position to calculate the clarity at current camera position. Clarity means how clear the fog is, and if it is equals to 1, it means fully clear. As shown in the .gif image, the center of the spherical fog has lowest clarity and the edge of the spherical fog has highest clarity. The clarity is determined by how far the camera is inside the fog. Therefore, we used the intersection position to calculate the clarity. 
 * Output fog color with the alpha value set to 1 - clarity.
 
 ## 7 Particle System
