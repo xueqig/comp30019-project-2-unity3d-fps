@@ -82,7 +82,10 @@ Shader "Unlit/RedHealthPickup"
 
             v2f vert (appdata v)
             {
+                // Fix the position of the pickup
                 v.vertex += float4(0, 0.3, 0, 0);
+
+                // Apply up and down movement
                 v.vertex = moveUpDown(v.vertex, _MovingSpeed, _MovingDistance);
                 
                 v2f o;
