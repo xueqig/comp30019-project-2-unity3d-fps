@@ -260,7 +260,7 @@ Vertex shader does the following:
 
 Fragment shader does the following: 
 * Use the raySphereIntersect method to get the intersection position.
-* The intersection position determines how far the camera is inside the fog, and therefore, it can be used to calculate the clarity.
+* Calculate the clarity at current camera position. As shown in the .gif image, different position has different clarity. Clarity means how clear the fog is, and it equals to 1 means fully clear. The clarity is determined by how far the camera is inside the fog. Therefore, we used the intersection position to calculate the clarity. 
 * Output fog color with the alpha value set to 1 - clarity.
 
 ## 7 Particle System
